@@ -1,0 +1,10 @@
+Name:  Seth Bishop
+Project Goal: Understand coding fundamentals
+Favorite TV Show:  Parks and Recreation
+Favorite Quote:
+“Do or do not.  There is no try.” - Yoda
+“Impressive.  Most impressive.” - Darth Vader
+Favorite movie: Star Wars
+
+quit
+

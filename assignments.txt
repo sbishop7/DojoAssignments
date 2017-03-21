@@ -1,0 +1,35 @@
+Seths-MacBook-Pro-2015:DojoAssignments sbishop7$ ls -R
+MEAN		Ruby		iOS
+Python		WebFundamentals	netCore
+
+./MEAN:
+about.txt
+
+./Python:
+about.txt
+
+./Ruby:
+about.txt
+
+./WebFundamentals:
+CSS		Git		HTML		Javascript	about.txt
+
+./WebFundamentals/CSS:
+about.txt
+
+./WebFundamentals/Git:
+about.txt
+
+./WebFundamentals/HTML:
+about.txt		indentation.html
+
+./WebFundamentals/HTML/indentation.html:
+
+./WebFundamentals/Javascript:
+about.txt
+
+./iOS:
+about.txt
+
+./netCore:
+about.txt
