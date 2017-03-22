@@ -1,0 +1,126 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10pt;
+    margin: 0px;
+}
+h1{
+    font-size: 16pt;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
+h2{
+    font-size: 12pt;
+    color: white;
+    background: linear-gradient(darkgray,dimgray,darkgray);
+    padding: 6px;
+    margin-left: 0px;
+}
+h3{
+    margin: 10px;
+}
+p{
+    color: gray;
+    font-size: 10pt;
+    margin: 5px;
+}
+a{
+    margin-left: 5px;
+    color: gray;
+}
+#wrapper{
+    width: 800px;
+    background: linear-gradient(#5c0099,mediumpurple,#5c0099);
+    padding: 10px;
+}
+#header{
+    width: 820px;
+    height: 50px;
+    background: white;
+    margin: -10px 0px 10px -10px;
+}
+#myName{
+    width: 510px;
+    height: 30px;
+    display: inline-block;
+    margin: -10px;
+    padding: 15px;
+}
+#subtitle{
+    width: 275px;
+    height: 30px;
+    display: inline-block;
+    vertical-align: top;
+    margin: -10px;
+    padding: 15px;
+}
+
+#aboutMe{
+    width: 440px;
+    height: 227px;
+    background-color: white;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 7px;
+    margin-right: 0px;
+}
+#footer{
+    width: 820px;
+    height: 35px;
+    background: white;
+    margin: 10px 0px -10px -10px;
+    padding: 10px;
+    color: gray;
+    font-size: 8pt;
+}
+.myPhoto{
+    width: 330px;
+    height: 217px;
+    border-width: 5px;
+    border-color: darkgray;
+    border-style: solid;
+}
+.info{
+    width: 254px;
+    height: 530px;
+    background-color: white;
+    margin: 10px 10px 10px 0px;
+    padding: 0px;
+    display: inline-block;
+    vertical-align: top;
+}
+.infoPic{
+    width: 254px;
+    height: 150px;
+}
+.infoText{
+    width: 254px;
+    height: 170px;
+    padding: 1px;
+
+}
+.infoTech{
+    width: 254px;
+    height: 170px;
+}
+.infoIcons{
+    width: 33px;
+    height: 33px;
+    display: inline-block;
+    margin: 7px;
+}
+.button{
+    background-color: teal;
+    color: white;
+    border-width: 1px;
+    border-color: black;
+    border-style: solid;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 9px;
+    box-shadow: 5px 5px 3px darkgray;
+    text-align: center;
+
+}
+.footerIcons{
+    width: 10px;
+    height: 10px;
+}
