@@ -70,6 +70,7 @@ a{
     padding: 10px;
     color: gray;
     font-size: 8pt;
+    text-align: center;
 }
 .myPhoto{
     width: 330px;
@@ -109,6 +110,7 @@ a{
 }
 .button{
     background-color: teal;
+    text-align: center;
     color: white;
     border-width: 1px;
     border-color: black;
@@ -117,7 +119,6 @@ a{
     padding: 5px;
     border-radius: 9px;
     box-shadow: 5px 5px 3px darkgray;
-    text-align: center;
 
 }
 .footerIcons{
