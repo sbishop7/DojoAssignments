@@ -1,0 +1,161 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+h1{
+    font-size: 24pt;
+    margin-bottom: 0px;
+}
+h3{
+    color: #0A678F;
+}
+h4{
+    color: white;
+}
+#wrapper{
+    width: 970px;
+    background: linear-gradient(#E3E5E6, whitesmoke, white)
+}
+#header{
+    background-color: white;
+}
+#logo{
+    width: 10%;
+    height: auto;
+    margin-bottom: -28px;
+}
+.subTitle{
+    background: linear-gradient(#0A678F,#4284A7,#0A678F);
+    color: white;
+    padding: 15px;
+    margin: 0px;
+}
+#leftSide{
+    width: 160px;
+    display: inline-block;
+    margin: 0px;
+    padding:3px;
+}
+.blueButton{
+    width: 100%;
+    background: linear-gradient(dodgerblue,#4284A7);
+    border-radius: 5px;
+    font-size: 10pt;
+    color: white;
+    padding: 5px 26px;
+    box-shadow: 2px 2px 2px darkgray;
+    text-decoration: none;
+}
+.orangeButton{
+    width: 185px;
+    background: linear-gradient(#F7A448,#CF7633);
+    border-radius: 5px;
+    font-size: 10pt;
+    color: white;
+    padding: 5px 15px;
+    box-shadow: 2px 2px 2px darkgray;
+    text-decoration: none;
+}
+.lightBlueButton{
+    width: 185px;
+    background: linear-gradient(#51B8C3,#10C4E2,#51B8C3);
+    border-radius: 5px;
+    font-size: 8pt;
+    color: white;
+    padding: 5px 25px;
+    box-shadow: 2px 2px 2px black;
+}
+#resources{
+    border-bottom: thin solid silver;
+}
+#advertisement{
+    width: 95%;
+    background-image: url("ad_background.png");
+    text-align: center;
+    color: white;
+    margin-top: 20px;
+    padding: 5px;
+}
+.adText{
+    color: white;
+    font-size: 14pt;
+    font-weight: lighter;
+}
+#ninjaIcon{
+    width: 75px;
+}
+#main{
+    width: 779px;
+    display: inline-block;
+    vertical-align: top;
+    padding: 10px;
+}
+#mainHeader{
+    width: 100%;
+    border-bottom: thin solid silver;
+}
+#homeIcon{
+    width: 20px;
+    height: auto;
+}
+#mainHeaderLeft{
+    width: 585px;
+    display: inline-block;
+    vertical-align: top;
+}
+#phoneIcon{
+    width: 40px;
+    display: inline-block;
+    vertical-align: top;
+    margin: 0px 5px 20px 15px;
+}
+#contactInfo{
+    display: inline-block;
+    vertical-align: top;
+}
+.blueText{
+    color: #6195A9;
+}
+.redText{
+    color: red;
+}
+.lightBlueText{
+    color: #42C8DB
+}
+.contactSmall{
+    font-size: 6pt;
+    margin: 0px;
+}
+.phone{
+    font-size: 14pt;
+    color: #42C8DB;
+    margin: 0px 0px 0px -4px;
+}
+.bold{
+    font-weight: bold;
+}
+#serverDiagram{
+    width: 33%;
+}
+#diagramWrapper{
+    text-align: center;
+}
+#big3{
+    width: 750px;
+    border: solid dodgerblue;
+    box-shadow: 3px 3px 3px gray;
+    padding: 10px;
+}
+.htmlDiagram{
+    width: 100px;
+    display: inline-block;
+}
+.italics{
+    font-style: italic;
+}
+#big3Text{
+    width: 645px;
+    display: inline-block;
+    vertical-align: top;;
+    padding: 0px;
+    margin-top: -10px;
+}
