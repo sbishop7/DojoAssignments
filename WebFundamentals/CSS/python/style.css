@@ -1,0 +1,166 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10pt;
+}
+h1{
+    color: black;
+    font-size: 12pt;
+}
+#wrapper{
+    width: 970px;
+    background: linear-gradient(#275275,#3572A5);
+    padding: 10px 10px 1px 10px;
+}
+#logoWrapper{
+    width: 66%;
+    display: inline-block;
+}
+#header{
+    text-align: justify;
+}
+#logo{
+    width: 60%;
+    height: auto;
+}
+#siteAdmjustments{
+    width: 30%;
+    display: inline-block;
+    vertical-align: top;
+    text-align: right;
+}
+#textSize{
+    font-size: 8pt;
+    text-align: right;
+    color: white;
+}
+.textSizeSelector{
+    color: darkgoldenrod;
+    font-size: 10pt;
+}
+.divider{
+    color: darkblue;
+}
+#search{
+    width: 60%;
+    border: 2px inset silver;
+    padding: 5px;
+    color: darkgray;
+    font-size: 8pt;
+    text-align: center;
+    margin: 0px 10px;
+}
+#searchButton{
+    background-color: #275275;
+    border: 2px outset silver;
+    padding: 5px;
+    color: white;
+    font-size: 8pt;
+    box-shadow: 1px 1px 1px black;
+    border-radius: 5px;
+}
+#searchWrapper{
+    background-color: #454441;
+    width: auto;
+    height: auto;
+    border-radius: 9px;
+    box-shadow: 2px 2px 2px black;
+    padding: 10px 30px;
+    text-align: center;
+}
+#navigation{
+    width: 88%;
+    background-color: #487CAA;
+    border-radius: 9px;
+    box-shadow: 2px 2px 2px black;
+    padding: 10pt;
+    text-align: center;
+    margin-left: 30pt;
+}
+.navLink{
+    font-size: 14pt;
+    margin: 10pt 20pt;
+    text-decoration: none;
+    color: white;
+}
+#sideMenu{
+    width: 33%;
+    font-size: 14pt;
+    display: inline-block;
+    margin: 10px;
+    padding-top: 15px;
+}
+.sideMenuList{
+    text-align: center;
+    list-style-position: inside;
+}
+.sideMenuListItem{
+    margin: 10px;
+    color: white;
+}
+#main{
+    width: 60%;
+    height: 300px;
+    display: inline-block;
+    vertical-align: top;
+    margin: 10px;
+    text-align: center;
+    color: white;
+}
+.mainQuote{
+    color: goldenrod;
+    font-style: italic;
+    font-size: 12pt;
+}
+.mainQuoteAuthor{
+    font-size: 12pt;
+}
+#details{
+    width: 970px;
+    height: auto;
+    background-color: white;
+    margin: 0px -10px 0px -10px;
+    padding: 10px;
+    text-align: center;
+    border-top: thin solid black;
+    border-bottom: thin solid black;
+    color: black;
+}
+#gettingStarted{
+    width: 300px;
+    height: auto;
+    border-top: thick solid #93B5D0;
+    display: inline-block;
+    margin: 10px;
+    padding: 0px 50px;
+    text-align: center;
+    color: black;
+}
+#applications{
+    width: 300px;
+    height: auto;
+    border-top: thick solid #93B5D0;
+    display: inline-block;
+    vertical-align: top;
+    margin: 10px;
+    padding: 0px 50px;
+    text-align: center;
+}
+.detailsHighlight{
+    color: #93B5D0;
+}
+#footer{
+    color: #93B5D0;
+    text-align: center;
+    padding: 30px 0px 0px 0px;
+}
+.footerLink{
+    margin: 10px 20px;
+    font-size: 12pt;
+    text-decoration: none;
+    color: #93B5D0;
+}
+.copyright{
+    font-size: 6pt;
+    color:#93B5D0;
+    margin-bottom-0pt;
+}
