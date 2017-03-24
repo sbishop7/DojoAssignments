@@ -1,0 +1,45 @@
+*{
+
+}
+h1{
+    margin-bottom: 0px;
+}
+#wrapper{
+    width: 660px;
+    /*height: 600px;*/
+    background: linear-gradient(#D7D2B4, #DBCDB7);
+    text-align: center;
+    padding: 20px;
+}
+.titlePics{
+    width: 100px;
+    height: 45px;
+}
+#titlePic2{
+    width: 100px;
+    height: 45px;
+    background-color: white;
+}
+.pics{
+    width: 100px;
+    height: 100px;
+    margin-top: 10px;
+}
+.blueBox{
+    width: 120px;
+    height: 120px;
+    border: solid black;
+    background-color: #75B7EB;
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 5px;
+}
+.redBox{
+    width: 120px;
+    height: 120px;
+    border: solid black;
+    background-color: #FA6670;
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 5px;
+}
