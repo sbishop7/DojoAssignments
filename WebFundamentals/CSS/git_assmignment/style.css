@@ -1,0 +1,117 @@
+*{
+    font-family: "Lucida Console", Monaco, monospace;
+    /*font-size: 10pt;*/
+    color: white;
+}
+h2{
+    margin: 2px;
+    color: black;
+}
+h4{
+    margin: 1px;
+}
+h6{
+    color: black;
+    font-size: 10pt;
+    margin: 20px;
+}
+a{
+    font-size: 10pt;
+}
+p{
+    font-size: 10pt;
+    margin: 5px;
+}
+#wrapper{
+    width: 970px;
+    background-color:#E0DCD9;
+    padding: 10px;
+}
+#header{
+    width: 950px;
+    background-color:#06B0AD;
+    padding: 10px;
+}
+#headerIcon{
+    display: inline-block;
+}
+#gitIcon{
+    width: 40px;
+}
+#title{
+    width: 250px;
+    height: 40px;
+    display: inline-block;
+    vertical-align: top;
+    padding: 0px;
+}
+#navigation{
+    display: inline-block;
+    vertical-align: top;
+    color:white;
+    text-align: center;
+    margin: 10px 0px 0px 0px;
+}
+#footer{
+    width: 950px;
+    background-color:#06B0AD;
+    padding: 10px;
+    margin-top: 10px;
+    color: black;
+    text-align: center;
+}
+.navURL{
+    margin: 5px 5px;
+}
+#main{
+    width: 950px;
+    background-color:#FFE78E;
+    padding: 10px;
+    margin-top: 10px;
+}
+#leftBox{
+    width: 25%;
+    background-color: #0A3F43;
+    padding: 5px 20px 10px 10px;
+    margin: 5px;
+    display: inline-block;
+}
+#rightBoxes{
+    width: 660px;
+    display: inline-block;
+    vertical-align: top;
+}
+.boxTrio{
+    width: 153px;
+    height: 155px;
+    background-color: #0A3F43;
+    padding: 5px 10px 10px 10px;
+    margin: 5px 20px 20px 20px;
+    display: inline-block;
+    vertical-align: top;
+}
+.blueText{
+    color: #06B0AD;
+}
+.boxDuo{
+    width: 264px;
+    height: 122px;
+    background-color: #0A3F43;
+    padding: 5px 10px 10px 10px;
+    margin: 20px 20px;
+    display: inline-block;
+    vertical-align: top;
+}
+.boxSingle{
+    width: 598px;
+    height: 120px;
+    background-color: #0A3F43;
+    padding: 5px 10px 10px 10px;
+    margin: 20px 20px;
+    display: inline-block;
+    vertical-align: top;
+}
+.footerURL{
+    color: purple;
+    margin: 5px;
+}
