@@ -1,0 +1,204 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+h1{
+    color: silver;
+    font-weight: lighter;
+    margin-left: 20px;
+}
+h2{
+    font-size: 10pt;
+    display: inline-block;
+    vertical-align: top;
+}
+h5{
+    font-size: 10pt;
+    border-bottom: thin solid silver;
+    padding: 0px 5px 10px 5px;
+    margin-right: 10px;
+}
+h6{
+    background-color: #46474C;
+    color: white;
+    font-size: 8pt;
+    padding: 10px 20px;
+    margin: -4px 0px 0px 0px;
+    border-radius: 0px 0px 5px 5px;
+}
+#wrapper{
+    width: 970px;
+}
+#header{
+    width: 930px;
+    background: linear-gradient(#F6F6F6,#DBE0D5);
+    border-radius: 5px;
+    padding: 0px;
+    margin: 20px;
+}
+#menuIcon{
+    width: 75px;
+    border-radius: 5px 0px 0px 5px;
+    margin-bottom: -4px;
+}
+#navigation{
+    display: inline-block;
+    vertical-align: top;
+    padding: 21px;
+    width: 600px;
+}
+.navURL{
+    color: black;
+    text-decoration: none;
+    font-size: 10pt;
+    margin: 20px;
+}
+#searchWrapper{
+    display: inline-block;
+    vertical-align: top;
+    width: 184px;
+    border-radius: 10px;
+    padding-top: 10px;
+}
+#searchField{
+    border-radius: 10px 0px 0px 10px;
+    height: 16px;
+    width: 150px;
+    margin: 12px -5px 10px 0px;
+    display: inline-block;
+    border: silver;
+}
+#searchButton{
+    margin: 12px 0px 0px 0px;
+    height: 18px;
+    display: inline-block;
+    vertical-align: top;
+}
+#main{
+    width: 930px;
+    margin: 0px 20px;
+}
+#banner{
+    width: 930px;
+}
+.divider{
+    color: gray;
+    margin: 0px 20px;
+}
+.locationURL{
+    color: lightskyblue;
+    text-decoration: none;
+}
+#store{
+    width: 930px;
+    background-color:#F3F3F3;
+    border: thin solid lightgray;
+    border-radius: 5px 5px 0px 0px;
+    margin-top: 10px;
+}
+#storeButton{
+    background: linear-gradient(#4C82A2, #4B7995);
+    text-decoration: none;
+    border-radius: 5px;
+    color: silver;
+    font-size: 12pt;
+    padding: 10px 20px;
+    box-shadow: 1px 1px 1px silver;
+}
+.arrows{
+    color: silver;
+    font-size: 12pt;
+    margin-left: 75px;
+}
+.space{
+    margin: 0px 40px;
+}
+#contents{
+    width: 930px;
+    height: 340px;
+    background-color:#F3F3F3;
+    border: thin solid lightgray;
+    padding-top: 20px;
+}
+#productDetailsLeft{
+    width: 205px;
+    display: inline-block;
+    margin-top: 10px;
+    padding: 0px 10px 10px 10px;
+    font-size: 10pt;
+
+}
+.detailsIcon{
+    width: 30px;
+}
+.productDetails{
+    width:205px;
+    display: inline-block;
+    vertical-align: top;
+    border-left: thin solid silver;
+    padding: 10px;
+    font-size: 10pt;
+}
+.details{
+    width: 201px;
+    height: 100px;
+    padding: 0px;
+}
+.pic{
+    width: 201px;
+    height: 165px;
+    text-align: center;
+}
+#trialPic{
+    height: 112px;
+    margin-top: 10px
+}
+.detailsPic{
+    width:100%;
+    margin-left: -5px;
+    margin-bottom: 10px;
+}
+.button{
+    width:186px;
+    background: linear-gradient(#81B2DC, #5BA2D3);
+    border-radius: 2px;
+    box-shadow: 1px 1px 1px silver; 
+    padding: 5px;
+    text-align: center;
+}
+.contentButtons{
+    text-decoration: none;
+    color: white;
+    font-size: 10pt;
+    padding: 10px 50px;
+}
+#extraSpace{
+    width: 930px;
+    height: 50px;
+    background-color:#F3F3F3;
+    border: thin solid lightgray;
+    border-radius: 0px 0px 5px 5px;
+}
+.siteSection{
+    width: 150px;
+    display: inline-block;
+    vertical-align: top;
+    padding-bottom: 20px;
+    margin-left: 1px;
+    font-size: 7pt;
+    color: #46474C;
+}
+.siteLink{
+    font-size: 10pt;
+    color: black;
+    text-decoration: none;
+}
+#footer{
+    width: 930;
+    color: darkgray;
+    padding-top: 20px;
+    font-size: 10pt;
+    border-top: thin solid silver;
+}
+.footerLink{
+    color: cornflowerblue;
+}
