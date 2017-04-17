@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>For A Few Billion</title>
+        <script>
+            function doubleMoney(){
+                var days = 30;
+                var total = 0;
+                var amount = .01;
+                for(var i = 1; i <= days; i++){
+                    total += amount;
+                    console.log("On day " + i + " I am given $" + amount + " for a total amount of $" + total);
+                    amount *= 2;
+                }
+                console.log("Total money received: $" + total);
+            }
+            function until10k(){
+                var day = 1;
+                var total = .01;
+                var amount = .01;
+                while (total <= 10000){
+                    day += 1;
+                    amount *= 2;
+                    total += amount;
+                }
+                console.log("It took " + day + " days to get $" +total);
+            }
+            function until1Billion(){
+                var day = 1;
+                var total = .01;
+                var amount = .01;
+                while (total <= 10000000000){
+                    day += 1;
+                    amount *= 2;
+                    total += amount;
+                }
+                console.log("It took " + day + " days to get $" +total);
+            }
+            function untilInfinity(){
+                var day = 1;
+                var total = .01;
+                var amount = .01;
+                while (total < Infinity){
+                    day += 1;
+                    amount *= 2;
+                    total += amount;
+                    console.log("On day " + day + " I am given $" + amount + " for a total amount of $" + total);
+                }
+                console.log("It took " + day + " days to get $" +total);
+            }
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>
