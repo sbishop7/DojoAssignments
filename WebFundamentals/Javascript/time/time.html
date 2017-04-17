@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>If You Don't Mind, Can I Have The Time?</title>
+        <script>
+            var HOUR = 3;
+            var MINUTE = 20;
+            var PERIOD = "PM";
+            var string = "It's "
+            var string2 = "It's "
+            if(MINUTE == 0){
+                string += HOUR;
+                string2 += HOUR;   
+            }
+            else if(MINUTE == 15){
+                string += "just after " + HOUR;
+                string2 += "quarter after " + HOUR;
+            }
+            else if(MINUTE === 30){
+                string += "just after " + HOUR;
+                string2 += "half past " + HOUR;
+            }
+            else if(MINUTE <30){
+                string += "just after " + HOUR;
+                string2 += MINUTE + " after " + HOUR;
+            }
+            else if(MINUTE === 45){
+                string += "almost " + (HOUR + 1);
+                string2 += "quarter until " + (HOUR + 1);
+            }
+            else if(MINUTE > 30){
+                string += "almost " + (HOUR + 1);
+                string2 += (60 - MINUTE) + " before " + (HOUR +1);
+            }
+            if(HOUR === 12 && MINUTE === 0 && PERIOD === "AM"){
+                string += " in the morning";
+                string2 = "It's midnight";
+            }
+            else if(HOUR === 12 && MINUTE === 0 && PERIOD === "PM"){
+                string += " in the evening";
+                string2 = "It's noon";
+            }
+            else if(HOUR === 12 && PERIOD === "PM"){
+                string2 += " in the afternoon";
+            }
+            else if(HOUR >= 1 && HOUR < 5 && PERIOD === "PM"){
+                string += " in the evening";
+                string2 += " in the afternoon";
+            }
+            else if(PERIOD ==="AM"){
+                string += " in the morning";
+                string2 += " in the morning";
+            }
+            else{
+                string += " in the evening";
+                string2 += " in the evening";
+            }
+            console.log(string);
+            console.log(string2);
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>
