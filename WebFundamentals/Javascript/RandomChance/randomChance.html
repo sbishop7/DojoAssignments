@@ -4,8 +4,21 @@
         <meta charset="UTF-8">
         <title>Random Chance</title>
         <script>
-            function randomChance(quarters){
-                
+            function randomChance(quarters,cashOut){
+                var chance = 0;
+                var won = 0;
+                while(quarters>0){
+                    quarters -= 1;
+                    chance = Math.trunc(Math.random() * 100)+1;
+                    // console.log(chance);
+                    if(chance == 1){
+                        won = Math.floor(Math.random() * 50) + 50;
+                        quarters += won;
+                    }
+                    if(quarters >= cashOut){
+                        break;
+                    }
+                }
                 return quarters;
             }
         </script>
