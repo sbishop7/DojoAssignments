@@ -1,0 +1,31 @@
+*{
+    /*outline: 1px dotted red;*/
+}
+#square{
+    width: 140px;
+    height: 140px;
+    background-color: blue;
+}
+#circle{
+    width: 140px;
+    height: 140px;
+    background-color: blue;
+    border-radius: 140px;
+}
+#triangle{
+    width: 0;
+    height: 0;
+    border-left: 70px solid transparent;
+    border-right: 70px solid transparent;
+    border-bottom: 140px solid blue;
+}
+#pacman{
+    width: 0;
+    height: 0;
+    background-color: blue;
+    border-radius: 140px;
+    border-top: 70px solid transparent;
+    border-bottom: 70px solid transparent;
+    border-right: 70px solid white;
+    border-left: 70px solid transparent;
+}
