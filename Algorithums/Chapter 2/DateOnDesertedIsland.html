@@ -30,7 +30,6 @@
                 }
                 return day;
             }
-
             function weekdayName2(dayNum){
                 var day;
                 dayNum = dayNum%7;
@@ -62,7 +61,6 @@
                 }
                 return day;
             }
-
             function someDays(){
                 var day;
                 var weekday;
@@ -78,21 +76,33 @@
                 }
 
             }
-
             function monthName(monthNum){
                 var months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
                 return months[monthNum-1];
             }
-
-            function monthToDays(monthNum){
+            function monthToDays(monthNum,year){
                 var days;
                 switch (monthNum) {
                     case 1:
                         days = 31;
                         break;
                     case 2:
-                        days = 28;
-                        break;
+                        if(year%400 === 0){
+                            days = 29;
+                            break;
+                        }
+                        else if(year%100 === 0){
+                            days = 28;
+                            break;
+                        }
+                        else if(year%4 === 0){
+                            days = 29;
+                            break;
+                        }
+                        else{
+                            days = 28;
+                            break;
+                        }
                     case 3:
                         days = 31;
                         break;
@@ -107,6 +117,7 @@
                         break;
                     case 7:
                         days = 31;
+                        break;
                     case 8:
                         days = 31;
                         break;
@@ -121,55 +132,28 @@
                         break;
                     case 12:
                         days = 31;
+                        break;
                 }
                 return days;
             }
-
-            function dayToMonth(dayNum){
+            function dayToMonth(dayNum,year){
                 var month;
                 for(var i=1;dayNum>0;i++){
                     month = i;
                     dayNum -= monthToDays(i);
                 }
-                return monthName(month);
+                return monthName(month,year);
             }
-
-            function dayToDayOfMonth(dayNum){
-                var month;
-                var monthDays;
-                var leap = 0;
-            
-            //console.log(dayNum);  
-                if(dayNum>1154){
-                for(var i=1155;i<=dayNum;i += 1460){
-                    leap += 1;
-                }
-                }
-                //console.log(dayNum);  
-                dayNum = dayNum%365;
-            //console.log(dayNum);
-                dayNum += leap;
-            //console.log(dayNum);
-                
-                if(dayNum<=31){
-                dayNum += 31;
-                }
-
-                //dayNum += 31;
-                for(var i=1;dayNum>=0;i++){
-                    month = i;
-                    monthDays = monthToDays(i)
-                    console.log("monthDays: "+ monthDays);
-                    console.log(dayNum);
-                    dayNum -= monthToDays(i);
-                console.log("Adjusted Days: " +dayNum);
-                    if(dayNum<=monthDays){
+            function dayToDayOfMonth(dayNum,year){
+                for(var i=1;dayNum>0;i++){
+                    if(dayNum <= monthToDays(i,year)){
                         return dayNum;
-                        break;
+                    }
+                    else{
+                        dayNum -= monthToDays(i,year);
                     }
                 }
             }
-
             function fullDate(dayNum){
                 var weekday = weekdayName2(dayNum);
                 var month = dayToMonth(dayNum);
@@ -177,53 +161,52 @@
                 var year = 2017;
                 console.log(weekday + ", " + month + " " + day + ", " + year);
             }
-
-
             function fullDate2(dayNum){
-                var leap = 0;
-            //console.log(leap);
-                leap = dayNum - 59;
-            //console.log(leap);
-                leap = dayNum - 59;
-            //console.log(leap);
-
-                //leap = Math.floor(leap/4);
-                //dayNum += leap;
-            //console.log(leap);
-            
-                var dayNum2 = dayNum%365;
-                if(dayNum2===0){
-                dayNum2 = 365;
-                }
-                //console.log(dayNum2);
-            
-                var weekday = weekdayName2(dayNum);
-                var month = dayToMonth(dayNum2);
-                var day = dayToDayOfMonth(dayNum);
-                var year = 2016 + Math.ceil(dayNum/365);
+                var dayNum2 = dayNum;
+                var year = 2017;
+                var daysInYear = 365;
+                while(dayNum2>365){
+                    if(year%4 === 0){
+                        daysInYear = 366;
+                    }
+                    else{
+                        daysInYear = 365;
+                    }
+                    dayNum2 -= daysInYear;
+                    year += 1;
+                }     
+                var weekday = weekdayName2(dayNum2);
+                var month = dayToMonth(dayNum2,year);
+                var day = dayToDayOfMonth(dayNum2,year);
                 console.log(weekday + ", " + month + " " + day + ", " + year);
-
             }
-
-            //fullDate(1460);
-            fullDate2(425);
-            fullDate2(32);
-            //fullDate2(366);
-            //fullDate2(8475);
-
-
+            function fullDate3(dayNum){
+                var dayNum2 = dayNum;
+                var year = 2017;
+                var daysInYear = 365;
+                while(dayNum2>365){
+                    if(year%400 === 0){
+                        daysInYear = 366;
+                    }
+                    else if(year%100 === 0){
+                        daysInYear = 365;
+                    }
+                    else if(year%4 === 0){
+                        daysInYear = 366;
+                    }
+                    else{
+                        daysInYear = 365;
+                    }
+                    dayNum2 -= daysInYear;
+                    year += 1;
+                }  
+                var weekday = weekdayName2(dayNum);
+                var month = dayToMonth(dayNum2,year);
+                var day = dayToDayOfMonth(dayNum2,year);
+                console.log(weekday + ", " + month + " " + day + ", " + year);
+            }
         </script>
     </head>
     <body>
-        <h1>h1</h1>
-        <h2>h2</h2>
-        <h3>h3</h3>
-        <p>p</p>
-        <div>div</div>
-        <ul>
-            <li>List item 1</li>
-            <li>List item 2</li>
-            <li>List item 3</li>
-        </ul>
     </body>
 </html>
