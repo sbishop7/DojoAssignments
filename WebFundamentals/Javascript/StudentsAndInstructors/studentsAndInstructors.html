@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Students and Instructors</title>
+        <script>
+            var students = [ 
+                {first_name:  'Michael', last_name : 'Jordan'},
+                {first_name : 'John', last_name : 'Rosales'},
+                {first_name : 'Mark', last_name : 'Guillen'},
+                {first_name : 'KB', last_name : 'Tonel'}
+            ]
+            function printStudents(students){
+                for(var i = 0; i<students.length; i++){
+                    console.log(students[i].first_name + " " + students[i].last_name);
+                }
+            }
+            var users = {
+                'Students': [ 
+                    {first_name:  'Michael', last_name : 'Jordan'},
+                    {first_name : 'John', last_name : 'Rosales'},
+                    {first_name : 'Mark', last_name : 'Guillen'},
+                    {first_name : 'KB', last_name : 'Tonel'}
+                ],
+                'Instructors': [
+                    {first_name : 'Michael', last_name : 'Choi'},
+                    {first_name : 'Martin', last_name : 'Puryear'}
+                ]
+            }
+            function printStudentsAndInstructors(users){
+                console.log("Students");
+                var nameLength = 0;
+                for(var i = 0; i<users.Students.length; i++){
+                    nameLength = users.Students[i].first_name.length;
+                    nameLength += users.Students[i].last_name.length
+                    console.log(i+1 + " - " + users.Students[i].first_name + " " + users.Students[i].last_name + " - " + nameLength);
+                }
+                console.log("Instructors");
+                for(i=0; i<users.Instructors.length; i++){
+                    nameLength = users.Instructors[i].first_name.length;
+                    nameLength += users.Instructors[i].last_name.length;
+                    console.log(i+1 + " - " + users.Instructors[i].first_name + " " + users.Instructors[i].last_name + " - " + nameLength);
+                }
+            }
+
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>
