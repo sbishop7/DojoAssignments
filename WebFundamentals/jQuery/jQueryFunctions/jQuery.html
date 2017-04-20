@@ -2,12 +2,41 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title></title>
-        <script>
-
+        <title>jQuery Functions</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $('#addClass').click(function(){
+                    $('#addClassText').addClass("redText");
+                });
+                $('#slidetogglePic').hide();
+                $('#slidetoggle').click(function(){
+                    $('#slidetogglePic').slideToggle("slow")
+                });
+            });
         </script>
     </head>
     <body>
-
+        <div class="functionWrapper">
+            <div class="buttonWrapper">
+                <button id="addClass">AddClass</button>
+            </div>
+            <div class="details">
+                <h1>AddClass</h1>
+                <p id="addClassText">Click the button to add class 'red' to this paragraph</p>
+            </div>
+        </div>
+        <div class="functionWrapper">
+            <div class="buttonWrapper">
+                <button id="slidetoggle">Slidetoggle</button>
+            </div>
+            <!--<img src="http://fanaru.com/ice-age/image/245234-ice-age-diego.gif" alt="Peak A Boo!" id="slidetogglePic">-->
+            <div class="details">
+                <h1>Slidetoggle</h1>
+                <p>click the button to slidetoggle a hidden image</p>
+            </div>
+            <img src="http://fanaru.com/ice-age/image/245234-ice-age-diego.gif" alt="Peak A Boo!" id="slidetogglePic">
+        </div>
     </body>
 </html>

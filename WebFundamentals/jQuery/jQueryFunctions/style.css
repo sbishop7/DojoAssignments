@@ -1,0 +1,26 @@
+*{
+    /*outline: 1px dotted red;*/*/
+}
+.functionWrapper{
+    border-bottom: thick solid black;
+}
+.buttonWrapper{
+    height=100px;
+    width=500px;
+    display:inline-block;
+    padding-top: 45px;
+}
+.details{
+    text-align: center;
+    display:inline-block;
+    vertical-align: top;
+    padding-left: 30px;
+}
+.redText{
+    color: red;
+}
+img{
+    width: 250px;
+    display: inline-block;
+    vertical-align: top;
+}
