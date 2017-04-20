@@ -1,16 +1,18 @@
 *{
-    /*outline: 1px dotted red;*/*/
+    /*outline: 1px dotted red;*/
 }
 .functionWrapper{
     border-bottom: thick solid black;
 }
 .buttonWrapper{
-    height=100px;
-    width=500px;
+    height:100px;
+    width: 100px;
     display:inline-block;
-    padding-top: 45px;
+    padding-top: 50px;
+    text-align: center;
 }
 .details{
+    width: 420px;
     text-align: center;
     display:inline-block;
     vertical-align: top;
@@ -23,4 +25,25 @@ img{
     width: 250px;
     display: inline-block;
     vertical-align: top;
+}
+#showPic{
+    display: none;
+}
+#slidetogglePic{
+    display: none;
+    height: 150px;
+}
+#slideDownPic{
+    display: none;
+}
+#fadeInPic{
+    display: none;
+}
+.beforePic{
+    height: 35px;
+    width: 35px;
+}
+.afterPic{
+    height: 35px;
+    width: 35px;   
 }

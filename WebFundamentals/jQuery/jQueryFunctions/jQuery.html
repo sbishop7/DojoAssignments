@@ -12,8 +12,41 @@
                 });
                 $('#slidetogglePic').hide();
                 $('#slidetoggle').click(function(){
-                    $('#slidetogglePic').slideToggle("slow")
+                    $('#slidetogglePic').slideToggle("slow");
                 });
+                $('#append').click(function(){
+                    $('#appendInstruction').append('<p><strong>Behold!</strong>  A new paragraph as been <strong>appended</strong> or added to the end of this this segment.  Pretty cool, huh?</p>');
+                })
+                $('#hideButton').click(function(){
+                    $('.hideText').hide();
+                })
+                $('#showButton').click(function(){
+                    $('#showPic').show();
+                })
+                $('#toggleButton').click(function(){
+                    $('.toggleText').toggle();
+                })
+                $('#slideDownButton').click(function(){
+                    $('#slideDownPic').slideDown("slow");
+                })
+                $('#slideUpButton').click(function(){
+                    $('#slideUpPic').slideUp("slow");
+                })
+                $('#fadeInButton').click(function(){
+                    $('#fadeInPic').fadeIn(1600);
+                })
+                $('#fadeOutButton').click(function(){
+                    $('#fadeOutText').fadeOut(1600);
+                })
+                $('#beforeButton').click(function(){
+                    $('button').before('<img src="http://www.netanimations.net/arrowkk2.gif" alt="arrow" class="beforePic"></br>');
+                })
+                $('#afterButton').click(function(){
+                    $('button').after('</br><img src="http://www.ilcontadinobio.it/images/arrow.gif" alt="arrow" class="afterPic">');
+                })
+                $('#htmlButton').click(function(){
+                    $('div.htmlTest').html("<center><p>And now for <span class='redText'> something </span> <b>COMPLETELY DIFFERENT!</b></p></center>");
+                })
             });
         </script>
     </head>
@@ -31,12 +64,150 @@
             <div class="buttonWrapper">
                 <button id="slidetoggle">Slidetoggle</button>
             </div>
-            <!--<img src="http://fanaru.com/ice-age/image/245234-ice-age-diego.gif" alt="Peak A Boo!" id="slidetogglePic">-->
             <div class="details">
                 <h1>Slidetoggle</h1>
                 <p>click the button to slidetoggle a hidden image</p>
             </div>
             <img src="http://fanaru.com/ice-age/image/245234-ice-age-diego.gif" alt="Peak A Boo!" id="slidetogglePic">
+        </div>
+        <div class="functionWrapper">
+            <div class="buttonWrapper">
+                <button id="append">Append</button>
+            </div>
+            <div class="details">
+                <h1>Append</h1>
+                <p id="appendInstruction">Click the button to append a new paragraph!</p>
+            </div>
+        </div>
+        <div class="functionWrapper">
+            <div class="buttonWrapper">
+                <button id="hideButton">Hide</button>
+            </div>
+            <div class="details">
+                <h1 class="hideText">Hide</h1>
+                <p class="hideText">Click the button to hide the text in this section</p>
+            </div>
+        </div>
+        <div class="functionWrapper">
+            <div class="buttonWrapper">
+                <button id="showButton">Show</button>
+            </div>
+            <div class="details">
+                <h1>Show</h1>
+                <p>Click the button to make a hidden picture show up.</p>
+            </div>
+            <img src="http://andrij.co/wp-content/uploads/2015/02/ralph-wave.gif" alt="Ralph Wiggum waving" id="showPic">
+        </div>
+        <div class="functionWrapper">
+            <div class="buttonWrapper">
+                <button id="toggleButton">Toggle</button>
+            </div>
+            <div class="details">
+                <h1>Toggle</h1>
+                <p class="toggleText">Click the button to make this text disappear.</p>
+                <p>... And then click the button again to make it reappear.</p>
+            </div>
+        </div>
+        <div class="functionWrapper">
+            <div class="buttonWrapper">
+                <button id="slideDownButton">SlideDown</button>
+            </div>
+            <div class="details">
+                <h1>SlideDown</h1>
+                <p>Click the button to reveal a picture.</p>
+            </div>
+            <img src="http://i.imgur.com/SP9Pu.gif" alt="Picard Waves" id="slideDownPic">
+        </div>
+        <div class="functionWrapper">
+            <div class="buttonWrapper">
+                <button id="slideUpButton">SlideUp</button>
+            </div>
+            <div class="details">
+                <h1>SlideUp</h1>
+                <p>Click on the button to make the next pick slide up</p>
+            </div>
+            <img src="https://uproxx.files.wordpress.com/2011/08/tumblr_lm1s18wscw1qgqkw9o1_500.gif?w=650" alt="Batman and Robin climing up" id="slideUpPic">
+        </div>
+        <div class="functionWrapper">
+            <div class="buttonWrapper">
+                <button id="fadeInButton">FadeIn</button>
+            </div>
+            <div class="details">
+                <h1>FadeIn</h1>
+                <p>Click the button to reveal a picture using fadeIn.</p>
+            </div>
+            <img src="http://www.jodocast.com/wp-content/uploads/2015/07/obi-wan-kenobi-the-empire-strikes-back-_144169-fli_1378671413.jpg" alt="Obiwan" id="fadeInPic">
+        </div>
+        <div class="functionWrapper">
+            <div class="buttonWrapper">
+                <button id="fadeOutButton">FadeOut</button>
+            </div>
+            <div class="details">
+                <h1>FadeOut</h1>
+                <p id="fadeOutText">Click this button to make this text fade away...</p>
+            </div>
+        </div>
+        <div class="functionWrapper">
+            <div class="buttonWrapper">
+                <button id="beforeButton">Before</button>
+            </div>
+            <div class="details">
+                <h1>Before</h1>
+                <p>Click on this button to add an arrow before all buttons</p>
+            </div>
+        </div>
+        <div class="functionWrapper">
+            <div class="buttonWrapper">
+                <button id="afterButton">After</button>
+            </div>
+            <div class="details">
+                <h1>After</h1>
+                <p>Click on the button to add an arrow after all buttons</p>
+            </div>
+        </div>
+        <div class="functionWrapper">
+            <div class="buttonWrapper">
+                <button id="htmlButton">Html</button>
+            </div>
+            <div class="details">
+                <h1>Html</h1>
+                <p>Click the button to add html content to the next section</p>
+            </div>
+        </div>
+        <div class="functionWrapper">
+            <div class="htmlTest"></div>
+        </div>
+        <div class="functionWrapper">
+            <div class="buttonWrapper">
+                <button>Attr</button>
+            </div>
+            <div class="details">
+                <h1>Attr</h1>
+            </div>
+        </div>
+        <div class="functionWrapper">
+            <div class="buttonWrapper">
+                <button>Val</button>
+            </div>
+            <div class="details">
+                <h1>Val</h1>
+            </div>
+        </div>
+        <div class="functionWrapper">
+            <div class="buttonWrapper">
+                <button>Text</button>
+            </div>
+            <div class="details">
+                <h1>Text</h1>
+            </div>
+        </div>
+        <div class="functionWrapper">
+            <div class="buttonWrapper">
+                <button>Data</button>
+            </div>
+            <div class="details">
+                <h1>Data</h1>
+            </div>
         </div>
     </body>
 </html>
