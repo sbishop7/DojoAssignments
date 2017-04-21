@@ -1,0 +1,27 @@
+*{
+    /*outline: 1px dotted red;*/
+}
+h1{
+    border-bottom: solid gray;
+    text-align: left;
+}
+table{
+    border: solid black;
+}
+form{
+    text-align: right;
+    width: 400px;
+}
+input{
+    margin: 5px;
+}
+thead{
+    border-bottom: solid black;
+}
+th{
+    text-align: left;
+    width: 200px;
+}
+td{
+    width: 200px;
+}
