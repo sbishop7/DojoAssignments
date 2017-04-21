@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Disappearing Ninja</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $('img').click(function(){
+                    $(this).fadeOut("slow");
+                })
+                $('button').click(function(){
+                    $('img').fadeIn(200);
+                })
+            })
+        </script>
+            
+    </head>
+    <body>
+        <h1>jQuery - assignment 1</h1>
+        <img src="nightbird.jpg" alt="Nightbird">
+        <img src="nightbird.jpg" alt="Nightbird">
+        <img src="nightbird.jpg" alt="Nightbird">
+        <img src="nightbird.jpg" alt="Nightbird"></br>
+        <img src="nightbird.jpg" alt="Nightbird">
+        <img src="nightbird.jpg" alt="Nightbird">
+        <img src="nightbird.jpg" alt="Nightbird">
+        <img src="nightbird.jpg" alt="Nightbird"></br>
+        <button>Restore</button>
+    </body>
+</html>

@@ -1,0 +1,14 @@
+*{
+    /*outline: 1px dotted red;*/
+}
+img{
+    width: 150px;
+    height: 150px;
+}
+button{
+    /*background-color: green;
+    color: white;*/
+    box-shadow: 2px 2px 2px black;
+    /*border: thin solid black;*/
+    margin-top: 20px;
+}
