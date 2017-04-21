@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Hover</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $('img').hover(function(){
+                    var pic1 = $(this).attr('src');
+                    $(this).attr('src', $(this).attr('alt-src'));
+                    $(this).attr('alt-src', pic1);
+                }, function(){
+                    var pic1 = $(this).attr('src');
+                    $(this).attr('src', $(this).attr('alt-src'));
+                    $(this).attr('alt-src', pic1);
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <h1>What Do These Characters Look Like in the Future?</h1>
+        <p>Hover your mouse over their pictures to see their future selves</p>
+        <img src="anakin.jpg" alt-src="vader.jpg" alt="Anakin Skywalker/Darth Vader">
+        <img src="palpatine.jpg" alt-src="emperor.png" alt="Palpatine">
+        <img src="orion.jpg" alt-src="prime.jpg" alt="Orion Pax/Optimus Prime">
+        <img src="megatron.jpg" alt-src="galvatron.jpg" alt="Megatron/Galvatron">
+       
+    </body>
+</html>
