@@ -1,0 +1,21 @@
+*{
+    /*outline: 1px dotted red;*/
+}
+#pokelist{
+    width: 75%;
+    display: inline-block;
+}
+#stats{
+    width: 200px;
+    height: 500px;
+    border: 25px solid red;
+    display: inline-block;
+    vertical-align: top;
+    padding: 10px;
+}
+h2{
+    text-align: center;
+}
+.statsPic{
+    text-align: center;
+}
