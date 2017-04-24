@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Weather</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('form').submit(function() {
+                var city = $('#city').val();
+                $('body').append("<h1>" + city + "</h1>");
+                var url = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&&appid=461ccb2deba0eddb31473f00e9ae368e";
+                $.get(url, function(res) {
+                    var html_str = "<p>Temperature: ";
+                    html_str += res.main.temp;
+                    $('body').append(html_str);
+                }, 'json');
+                return false;
+            });
+        });
+
+    </script>
+  </head>
+  <body>
+      <form>
+          <label for="city">Enter City:</label>
+          </label><input type="text" id="city" name="city">
+          <input type="submit" value="Search Weather">
+      </form>
+  </body>
+</html>
