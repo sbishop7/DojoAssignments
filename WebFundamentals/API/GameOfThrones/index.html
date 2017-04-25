@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Game of Throne: Houses</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('img').click(function() {
+                    var html_str = "<h2>House Details</h2>";
+                    var words = $(this).attr('words');
+                    $('#details').css('border', 'thin solid black');
+                    var url = "https://www.anapioficeandfire.com/api/houses/" + $(this).attr('id') + "/";
+                    $.get(url, function(res) {
+                        html_str += "<p>Name: " + res.name + "</p>";
+                        html_str += "<p>Words: " + res.words + "</p>";
+                        html_str += "<p>Titles: "
+                        for(var i=0; i<res.titles.length; i++){
+                            html_str += res.titles[i];
+                            if(res.titles[i+1] != null){
+                                html_str += ", ";
+                            }
+                        }
+                        html_str += "</p>";
+                        $('#details').html(html_str);
+                    }, 'json');
+                    $('#details').html(html_str);
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <h1>The Houses of Game of Thrones</h1>
+        <img src="stark.jpg" alt="House Stark" id="362" words="Winter is Coming">
+        <img src="targaryen.jpg" alt="House Targaryen" id="378" words="Fire and Blood">
+        <img src="lannister.jpg" alt="House Lannister" id="229" words="Hear Me Roar">
+        <img src="baratheon.png" alt="House Baratheon" id="17" words="Ours is the Fury">
+        <div id="details">
+        </div>
+    </body>
+</html>

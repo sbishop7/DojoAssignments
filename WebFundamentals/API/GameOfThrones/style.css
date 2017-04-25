@@ -1,0 +1,16 @@
+*{
+    /*outline: 1px dotted red;*/
+}
+img{
+    width: 250px;
+    height: 140px;
+}
+h2{
+    margin-top: 10px;
+}
+#details{
+    width: 500px;
+    margin-left: 25%;
+    text-align: left;
+    padding: 10px;
+}
