@@ -1,5 +1,9 @@
 *{
     /*outline: thin dotted red;*/
+    color: white;
+}
+h1{
+    color: white;
 }
 body{
     background-color: black;
@@ -30,6 +34,17 @@ div#pacman{
     /*-webkit-transform: rotate(90deg);*/
     /*transform: rotate(145deg);*/
 }
+div#msPacman{
+    background-image: url("msPacman.gif");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    /*-webkit-transform: rotate(90deg);*/
+    /*transform: rotate(145deg);*/
+}
 div.cherry{
     background-image: url("cherry.png");
     background-repeat: no-repeat;
@@ -39,11 +54,30 @@ div.cherry{
     height: 20px;
     position: absolute;*/
 }
+div#ghost{
+    background-image: url("ghost.gif");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    /*display: none;*/
+}
 div.empty{
 }
 div#score{
     border: 1px solid white;
-    width: 100px;
+    width: 250px;
+    height: 20px;
+    padding: 7px;
+    color: white;
+    text-align: center;
+    /*border-top: 20px;*/
+}
+div#score2{
+    border: 1px solid white;
+    width: 250px;
     height: 20px;
     padding: 7px;
     color: white;
