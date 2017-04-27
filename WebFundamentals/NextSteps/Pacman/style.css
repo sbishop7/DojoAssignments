@@ -1,0 +1,52 @@
+*{
+    /*outline: thin dotted red;*/
+}
+body{
+    background-color: black;
+    margin: 0px;
+}
+div.row div{
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    margin-bottom: -4px;
+}
+div.brick{
+    background-color: blue;
+}
+div.coin{
+    background-image: url("coin.gif");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+div#pacman{
+    background-image: url("pacman.gif");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    /*-webkit-transform: rotate(90deg);*/
+    /*transform: rotate(145deg);*/
+}
+div.cherry{
+    background-image: url("cherry.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    /*width: 20px;
+    height: 20px;
+    position: absolute;*/
+}
+div.empty{
+}
+div#score{
+    border: 1px solid white;
+    width: 100px;
+    height: 20px;
+    padding: 7px;
+    color: white;
+    text-align: center;
+    /*border-top: 20px;*/
+}
