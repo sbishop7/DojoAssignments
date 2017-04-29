@@ -80,10 +80,12 @@
 	<script>
 		var hero = {
 			x: 500,
-			y: 300
+			y: 300,
+			goX: 0,
+			goY: 0
 		};
 
-		var enemies = [{x: 50, y:100, class: 'enemy1'}, {x:175, y:50, class: 'enemy2'}, {x:300, y:100, class: 'enemy1'}, {x: 475, y:50, class: 'enemy2'}, {x: 600, y:100, class: 'enemy1'}, {x:775, y:50, class: 'enemy2'}, {x:900, y:100, class: 'enemy1'}];
+		var enemies = [{x: 50, y:100, class: 'enemy1', speed: 5}, {x:175, y:50, class: 'enemy2', speed: 7}, {x:300, y:100, class: 'enemy1', speed: 5}, {x: 475, y:50, class: 'enemy2', speed: 7}, {x: 600, y:100, class: 'enemy1', speed: 7}, {x:775, y:50, class: 'enemy2', speed: 5}, {x:900, y:100, class: 'enemy1', speed: 5}];
 
 		var enemySquadCount = 7;
 
@@ -99,6 +101,11 @@
 
 		var explosion = new Audio('explosion.wav');
 
+		var audio = document.createElement("audio");
+			audio.src = "dangerZone.mp3";
+			// audio.volume = .75;
+			audio.play();
+
 		function displayHero(){
 			document.getElementById('hero').style['left'] = hero.x + "px";
 			document.getElementById('hero').style['top'] = hero.y + "px";
@@ -112,9 +119,24 @@
 			document.getElementById('enemies').innerHTML = output;
 		};
 
+		var heroDirection;
+
+		function movehero(){
+			
+			if(hero.y+hero.goY> 530 || hero.y+hero.goY < 0 ){
+				hero.goY = 0;
+			}
+			if(hero.x + hero.goX > 990 || hero.x+hero.goX < 0){
+				hero.goX = 0;
+			}
+			hero.x += hero.goX;
+			hero.y += hero.goY;
+		}
+
 		function moveEnemies(){
 			for(var i=0; i<enemies.length; i++){
-				enemies[i].y += 5;
+				// enemies[i].y += 5;
+				enemies[i].y += enemies[i].speed;
 
 				if(enemies[i].y > 530){
 					enemies[i].y = 0;
@@ -170,6 +192,7 @@
 		}
 
 		function gameLoop(){
+			movehero();
 			displayHero();
 			moveEnemies();
 			displayEnemies();
@@ -183,14 +206,15 @@
 		}
 
 		function newLevel(){
-			enemySquadCount += 2;
+			enemySquadCount += 20;
 			for(var i=0; i<enemySquadCount; i++){
 				var random = Math.trunc(Math.random()*2);
+				var speed = Math.trunc(Math.random()*7 + 3);
 				if(random == 0){
-					enemies.push({x: Math.random()*980, y: 0, class: 'enemy1'});
+					enemies.push({x: Math.random()*980, y: 0, class: 'enemy1', speed: speed});
 				}
 				else {
-					enemies.push({x: Math.random()*980, y: 0, class: 'enemy2'});
+					enemies.push({x: Math.random()*980, y: 0, class: 'enemy2', speed: speed});
 				}
 			}
 			level += 1;
@@ -254,14 +278,23 @@
 		document.onkeydown = function(e){
 			// console.log(e.keyCode);
 			if(e.keyCode == 37){
-				hero.x -= 10;
+				hero.goX = -5;
+				// hero.x -= 10;
 			} else if(e.keyCode == 39){
-				hero.x += 10;
+				// heroDirection = hero.y += 10;
+				// hero.x += 10;
+				hero.goX = 5;
 			}
 			if(e.keyCode == 38){ //up
-				hero.y -= 10;
+				// heroDirection = hero.y += 10;
+				// hero.y -= 10;
+				hero.goX = 0;
+				hero.goY = -5;
 			} else if(e.keyCode == 40){ //down
-				hero.y += 10;
+				// heroDirection = hero.y += 10;
+				// hero.y += 10;
+				hero.goX = 0;
+				hero.goY = 5;
 			}
 			if(e.keyCode == 32){
 				bullets.push({x: hero.x+6, y: hero.y-10});
