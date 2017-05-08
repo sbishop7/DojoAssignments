@@ -1,0 +1,24 @@
+pip install Django
+	-Installs Django
+
+pip list
+	-lists the installed packages
+
+pip install Django 
+	-running this command again informs you that packages are already installed on the computer
+
+pip freeze
+	-packages are listed in case-insensitive order.  Also displays the version number after “==“ instead of within “()”
+
+First cd into your Desktop directory (cd ~/Desktop), then run this command: pip freeze > requirements.txt. What do you see when you ls? What's inside this file?
+	-saves the output into the newly created file name we provided rather than displaying within the terminal window
+
+
+pip uninstall Django
+	-Uninstalls the Django package (if you respond with “y” when asking whether or not to proceed)
+
+pip show Django
+	-shows a summary of Django (version, designer info, license info, where it’s located on your computer, and requirements)
+
+pip search Flask. 
+	-searches for available packages whose name and/or summary contains “Flask”
