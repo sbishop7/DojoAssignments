@@ -5,7 +5,7 @@ while count < 4:
     count += 1
 
 
-#below is a flexible version
+#below is a flexible version to define height of the board dsf
 
 def createCheckboard(x):
     count = 0
