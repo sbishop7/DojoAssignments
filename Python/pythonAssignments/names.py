@@ -34,7 +34,7 @@ def printStudentsAndInstructors(users):
         print key
         for value in data:
             count += 1
-            print count, "-", value["first_name"], value["last_name"], "-", len(value["first_name"]) + len(value["last_name"])
+            print count, "-", value["first_name"].upper(), value["last_name"].upper(), "-", len(value["first_name"]) + len(value["last_name"])
 
 print "Part 2:"
 printStudentsAndInstructors(users)
