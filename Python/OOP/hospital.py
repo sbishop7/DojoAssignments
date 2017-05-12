@@ -15,10 +15,10 @@ class Hospital(object):
         self.patients = []
         self.name = name
         self.capacity = capacity
-    def admit(self, patient, bed):
+    def admit(self, patientID, bed):
         if len(self.patients) < self.capacity:
-            self.patients.append(patient)
-            patient.bedNumber = bed
+            self.patients.append(patientID.id)
+            patientID.bedNumber = bed
             print "The patient has been admitted"
         else:
             print "The hospital is full"
@@ -26,7 +26,7 @@ class Hospital(object):
     def discharge(self, patientID):
         index = 0
         for data in self.patients:
-            if data.id == patientID:
+            if data == patientID:
                 self.patients.pop(index)
             index += 1
         patientID.bedNumber = "none"
@@ -34,6 +34,7 @@ class Hospital(object):
     def displayPatients(self):
         for value in self.patients:
             print value
+            # value.displayInfo()
         return self
 
         
@@ -48,9 +49,14 @@ uwmc.admit(patient2, 2)
 uwmc.admit(patient3, 3)
 
 uwmc.displayPatients()
+print uwmc.patients
 
 patient1.displayInfo()
 
-uwmc.discharge(patient1)
+# uwmc.discharge(patient1)
+
+patient1.displayInfo()
+
+uwmc.displayPatients()
 
 patient1.displayInfo()
