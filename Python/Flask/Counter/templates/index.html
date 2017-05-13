@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <title>Counter</title>
+        <link rel="stylesheet" type="text/css" href={{url_for('static', filename='style.css')}}>
+    </head>
+    <body>
+        <h1>counter</h1>
+        <p>{{ session['count'] }} times</p>
+        <form action="/count" method="post">
+            <input type="submit" name="addTwo" value="+2">
+            <input type="hidden" name='action' value="1">
+        </form>
+        <form action="/reset" method="post">
+            <input type="submit" name="reset" value="Reset">
+            <input type="hidden" name='action' value="reset">
+        </form>
+    </body>
+</html>
