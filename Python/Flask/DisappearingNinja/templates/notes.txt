@@ -1,0 +1,6 @@
+<img src ="{{url_for('static',filename='images/tmnt.png')}}" alt="ninja pic">
+        <img src={{ninjaImage}} alt="ninja pic">
+        <img src ={{ninjaImage}} alt="ninja pic">
+        <img src="static/images/tmnt.png">
+        {{ session['image'] }}
+        <img src="{{url_for( 'static', filename={{ ninjaImage }} )}}">

@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>Rock Paper Scissors!</title>
+        <!--<link rel="stylesheet" type="text/css" href="/Users/sbishop7/Desktop/DojoAssignments/Python/python_stack/flask_fundamentals/rock_paper_scissors/static/my_style.css">-->
+        <link rel="stylesheet" type="text/css" href={{url_for('static', filename='my_style.css')}}>
+    </head>
+    <body>
+        <ul>
+            <li>Wins: {{ session['wins'] }}</li>
+            <li>Loses: {{ session['loses'] }}</li>
+            <li>Ties: {{ session['ties'] }}</li>
+        </ul>
+        <div id="playArea">
+            <h1>Rock Paper Scissors</h1>
+            <form action="/result" method="POST">
+                <input type="submit" name="rock" value="Rock">
+                <input type='hidden' name='action' value="0">
+            </form>
+            <form action="/result" method="POST">
+                <input type="submit" name="paper" value="Paper">
+                <input type='hidden' name='action' value="1">
+            </form>
+            <form action="/result" method="POST">
+                <input type="submit" name="scissors" value="Scissors">
+                <input type='hidden' name='action' value="2">
+            </form>
+        </div>
+    </body>
+</html>
