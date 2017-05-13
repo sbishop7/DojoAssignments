@@ -1,0 +1,38 @@
+*{
+    text-align: center;
+    /*border: thin dotted red;*/
+}
+h2{
+    color: white;
+    background-color: red;
+    margin: auto;
+    width: 30%;
+    border: thin solid black;
+    padding: 20px;
+    margin-bottom: 10px;
+}
+h3{
+    color: white;
+}
+#low{
+    background-color: red;
+    margin: auto;
+    width: 30%;
+    border: thin solid black;
+}
+#high{
+    background-color: red;
+    margin: auto;
+    width: 30%;
+    border: thin solid black;
+}
+.hidden{
+    display: none
+}
+#reset{
+    background-color: green;
+    margin: auto;
+    width: 30%;
+    border: thin solid black;
+    padding: 20px;
+}

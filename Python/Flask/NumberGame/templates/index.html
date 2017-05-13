@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <title>Number Game</title>
+        <link rel="stylesheet" type="text/css" href={{url_for('static', filename='style.css')}}>
+    </head>
+    <body>
+        <h1>Welcome to the Great Number Game!</h1>
+        <p>I am thinking of a number between 1 and 100</p>
+        <p>Take a guess!</p>
+        <h2 class={{ session['guessAlert'] }}>{{ session['result'] }}</h2>
+        <form action="/guess" method="post" class={{ session['guessBox'] }}>
+            <input type="text" name="guess" autofocus>
+            <p><input type="submit" name='action' value="Submit"></p>
+        </form>
+        <form id="reset" action="/reset" method="post" class={{ session['reset'] }}>
+            <h3>{{ session['number'] }} was the number!</h3>
+            <p><input type="submit" name='reset' value="Play again!" autofocus></p>
+        </form>
+
+    </body>
+</html>
