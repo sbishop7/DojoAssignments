@@ -1,6 +1,7 @@
 <html>
     <head>
         <Title>Dojo Survey</Title>
+        <link rel="stylesheet" type="text/css" href={{url_for('static', filename='style.css')}}>
     </head>
     <body>
         <form action='/result' method='post'>
@@ -24,6 +25,13 @@
             Comment (optional):</br>
             <textarea rows='5' cols='60' name='comments'></textarea></br>
             <input type='submit' name="" value='Submit'>
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <p><font color="red">{{message}}</font></p>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
         </form>
     </body>
 </html>
