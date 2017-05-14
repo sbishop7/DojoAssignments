@@ -1,0 +1,24 @@
+*{
+    /*border: thin dotted red;*/
+}
+
+form{
+    display: inline-block;
+    vertical-align: top;
+    width: 20%;
+    /*height: 200px;*/
+    text-align: center;
+    border: thin solid black;
+    margin-right: 22px;
+    padding-bottom: 11px;
+}
+#activities{
+    width: 90%;
+    height: 200px;
+    border: thin solid black;
+    overflow: scroll;
+    /*font-size: .7em*/
+}
+#goldSources{
+    /*text-align: center;*/
+}
