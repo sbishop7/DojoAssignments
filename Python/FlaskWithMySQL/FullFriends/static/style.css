@@ -1,0 +1,14 @@
+*{
+    border: thin dotted red;
+}
+h1{
+    color: blue;
+}
+table{
+    margin: auto;
+    width: 50%;
+}
+form{
+    margin: auto;
+    width: 50%;
+}
