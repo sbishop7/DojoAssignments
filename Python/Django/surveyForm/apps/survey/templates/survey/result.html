@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'survey/css/result_style.css' %}">
+</head>
+<body>
+    <form action="go_back" method="POST">
+        {% csrf_token %}
+        <h4>Submitted Information:</h4>
+        <table>
+            <tr>
+                <td>Name:</td>
+                <td>{{ request.session.name }}</td>
+            </tr>
+            <tr>
+                <td>Dojo Location:</td>
+                <td>{{ request.session.location }}</td>
+            </tr>
+            <tr>
+                <td>Favorite Language:</td>
+                <td>{{ request.session.language }}</td>
+            </tr>
+            <tr>
+                <td>Comment:</td>
+                <td>{{ request.session.comment }}</td>
+            </tr>
+        </table>
+        <!--Name: {{ request.session.name }}-->
+        <p><input type='submit' id="submit" value='Go Back'></p>
+    </form>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Time Display</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'time_display/css/time_display.css' %}">
+</head>
+<body>
+    <div id="header">
+        The current time and date is:
+    </div>
+    <div id="timebox">
+        <h1>{{date}}</h1>
+        <h1>{{time}}</h1>
+    </div>
+</body>
+</html>

@@ -1,0 +1,16 @@
+*{
+    /*border: thin dotted red;*/
+}
+form{
+    border: thin solid black;
+    width: 400px;
+    margin: auto;
+    padding: 10px;
+}
+h6{
+    text-decoration: underline;
+}
+#subtmit{
+    margin-left: auto;
+    color: red;
+}

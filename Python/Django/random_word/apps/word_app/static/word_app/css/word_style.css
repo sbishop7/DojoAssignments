@@ -1,0 +1,9 @@
+*{
+    /*border: thin dotted red;*/
+    text-align: center;
+}    
+#wordbox{
+    border: thin solid black;
+    width: 50%;
+    margin: auto;
+}

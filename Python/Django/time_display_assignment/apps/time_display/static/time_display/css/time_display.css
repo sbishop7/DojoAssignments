@@ -1,0 +1,14 @@
+*{
+    text-align: center;
+}
+#header{
+    border: thin solid black;
+    width: 250px;
+    margin: auto;
+}
+#timebox{
+    border: thin solid black;
+    width: 400px;
+    margin: auto;
+    margin-top: 30px;
+}
