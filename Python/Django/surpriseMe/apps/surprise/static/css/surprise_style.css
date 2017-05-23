@@ -1,0 +1,12 @@
+*{
+    /*border: thin dotted red;*/
+    text-align: center;
+}
+#surprises{
+    width: 33%;
+    height: 300px;
+    border: thin solid black;
+    overflow: scroll;
+    margin: auto;
+    padding: 5px;
+}

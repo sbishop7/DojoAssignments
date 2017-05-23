@@ -1,0 +1,12 @@
+*{
+    /*border: thin dotted red;*/
+    text-align: center;
+}    
+h3{
+    width: 33%;
+    margin: auto;
+    margin-top: 50px
+}
+img{
+    width: 75%;
+}

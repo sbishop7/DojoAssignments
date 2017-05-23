@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Surprise Me Results</title>
+    {%load static%}
+    <link rel="stylesheet" href="{%static 'css/surprise_style.css'%}">
+</head>
+<body>
+    <h1>Surprises:</h1>
+    <div id="surprises">
+        {% csrf_token %}
+        {% for surprise in request.session.display %}
+            {{ surprise }}</br>
+        {% endfor %}
+    </div>
+</body>
+</html>
