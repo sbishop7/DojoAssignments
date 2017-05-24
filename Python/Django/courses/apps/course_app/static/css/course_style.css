@@ -1,0 +1,38 @@
+*{
+    /*border: thin dotted red;*/
+}
+form{
+    width: 460px;
+}
+.text{
+    margin: auto;
+    display: inline-block;
+    vertical-align: top;
+    width: 350px;
+}
+label{
+    width: 90px;
+    display: inline-block;
+}
+.button{
+    text-align: right;
+    padding: 5px;
+}
+table{
+    border: thin solid black;
+    border-collapse: collapse;
+}
+th{
+    border-right: solid thin black;
+    border-left: solid thin black;
+    padding: 3px;
+}
+td{
+    border-right: solid thin black;
+    border-left: solid thin black;
+    padding: 3px;
+}
+.header{
+    background-color: silver;
+}
+tr:nth-child(even) {background-color: #f2f2f2}

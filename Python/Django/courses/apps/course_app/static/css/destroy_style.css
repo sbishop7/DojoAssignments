@@ -1,0 +1,27 @@
+*{
+    /*border: thin dotted red;*/
+}
+form{
+    /*width: 460px;*/
+    margin: auto;
+    display: inline-block;
+    vertical-align: top;
+}
+label{
+    width: 90px;
+    display: inline-block;
+}
+input{
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 30px;
+}
+#delete{
+    background-color: red;
+    color: white;
+    border-radius: 8px;
+}
+#wrapper{
+    margin: auto;
+    width: 450px;
+}

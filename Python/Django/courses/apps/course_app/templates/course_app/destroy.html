@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        {% load staticfiles %}
+        <link rel="stylesheet" href="{% static 'css/destroy_style.css' %}">
+
+        <title>Add a student to all bootcamp courses</title>
+    </head>
+    <body>
+        <div id='wrapper'>
+            <h3>Are you sure you want to delete the following course?</h3>
+            {% csrf_token %}
+            <p><label>Name:</label> {{ removing.name }}</p>
+            <p><label>Description:</label> {{ removing.description }}</p>
+            <form action="/cancel" method="POST">{% csrf_token %}<input type='submit' name='cancel' value='No'/></form>
+            <form action="/delete" method="POST">{% csrf_token %}<input type='submit' id="delete" name='submit' value='Yes! I want to delete this'/></form>
+        </div>
+    </body>
+</html>
