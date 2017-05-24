@@ -1,0 +1,69 @@
+*{
+    /*border: thin dotted red;*/
+}
+#pageTitle{
+    font-weight: bold;
+    font-size: 2em;
+    display: inline-block;
+    width: 68%;
+}
+#headerRight{
+    text-align: right;
+    display: inline-block;
+    vertical-align: top;
+    width: 30%;
+}
+h3{
+    margin-bottom: 1px;
+    padding-bottom: 0px;
+}
+
+#currentUser{
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 10px;
+    width: 150px;
+    text-align: center;
+}
+#logout{
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 10px;
+    width: 60px;
+    text-align: center;
+}
+.submitButton{
+    float: right;
+    margin-right: 10px;
+}
+.messageBox{
+    padding: 20px;
+    width: 580px;
+    margin: auto;
+}
+#messages{
+    padding: 20px;
+    width: 580px;
+    margin: auto;
+}
+.messageHeader{
+    font-weight: bold;
+    margin-bottom: 0px;
+}
+.message{
+    padding-left: 20px;
+    margin-top: 0px;
+}
+.commentHeader{
+    font-weight: bold;
+    margin-bottom: 0px;
+    padding-left: 30px;
+}
+.comment{
+    padding-left: 40px;
+    margin-top: 0px;
+}
+.commentBox{
+    padding-left: 40px;
+    margin-bottom: 30px;
+}
