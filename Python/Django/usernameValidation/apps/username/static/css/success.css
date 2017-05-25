@@ -1,0 +1,13 @@
+*{
+    /*border: thin dotted red;*/
+}
+h1{
+    border: thin solid black;
+    background-color: green;
+    color: white;
+    width: 500px;
+    padding: 10px;
+}
+h3{
+    text-decoration: underline;
+}

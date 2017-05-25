@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Username Validator</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'css/username_style.css' %}">
+
+</head>
+<body>
+    {% if messages %}
+        {% for message in messages %}
+            <h1>{{ message }}</h1>
+        {% endfor %}
+    {% endif %}
+    <form action="{% url 'username:create' %}" method="POST">
+        {% csrf_token %}
+        <p>Username: <input type="text" name="username"></p>
+        <input type="submit" value="Submit"/>
+    </form>
+    
+</body>
+</html>

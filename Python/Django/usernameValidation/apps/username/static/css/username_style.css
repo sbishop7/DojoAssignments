@@ -1,0 +1,10 @@
+*{
+    /*border: thin dotted red;*/
+}
+h1{
+    border: thin solid black;
+    background-color: red;
+    color: white;
+    width: 310px;
+    padding: 10px;
+}
