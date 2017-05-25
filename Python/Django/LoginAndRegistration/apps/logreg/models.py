@@ -36,7 +36,6 @@ class UserManager(models.Manager):
             new_user = self.create(first_name = postData['first_name'], last_name = postData['last_name'], email = postData['email'], password = postData['password'])
             response_to_views['status'] = True
             response_to_views['user'] = new_user
-            response_to_views['name'] = postData['first_name']
             response_to_views['message'] = 'Successfully registered!'
 
         return response_to_views
@@ -46,17 +45,9 @@ class UserManager(models.Manager):
         errors = []
 
         if self.filter(email = postData['email']).filter(password=postData['password']):
-            print "found"
             user = self.get(email = postData['email'])
         else:
             errors.append('Email or Password does not match')
-
-        print ('*'*50)
-        print user
-        print ('*'*50)
-
-        # if user['password'] != postData['password']
-        #     errors.append('Email or Password does not match')
 
         response_to_views = {}
 
@@ -65,9 +56,10 @@ class UserManager(models.Manager):
             response_to_views['errors'] = errors
         else:
             response_to_views['status'] = True
+            response_to_views['email'] = postData['email']
             response_to_views['user'] = user
             response_to_views['name'] = 'Some Name'
-            response_to_views['message'] = 'Successfully registered!'
+            response_to_views['message'] = 'Successfully logged in!'
 
         return response_to_views
 

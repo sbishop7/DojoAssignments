@@ -10,7 +10,12 @@ def index(request):
     return render(request, 'logreg/index.html')
 
 def success(request):
-    return render(request, 'logreg/success.html')
+    current_user = User.objects.get(id=request.session['user_id'])
+    context = {
+        'name' : current_user.first_name,
+        'message' : request.session['message']
+    }
+    return render(request, 'logreg/success.html', context)
 
 def register(request):
     if request.method == 'POST':
@@ -18,7 +23,8 @@ def register(request):
 
     if response_from_models['status']:
         request.session['message'] = response_from_models['message']
-        request.session['name'] = response_from_models['name']
+        request.session['user_id'] = response_from_models['user'].id
+        request.session['username'] = response_from_models['user'].first_name
         return redirect('logreg:success')
     else:
         for error in response_from_models['errors']:
@@ -28,23 +34,10 @@ def register(request):
 def login(request):
     if request.method == 'POST':
         response_from_models = User.objects.validate_login(request.POST)
-        current_user = response_from_models['user']
-    print ('*'*50)
-    # for x in current_user:
-    #     print x
-    
-    print ('*'*50)
     if response_from_models['status']:
         request.session['message'] = response_from_models['message']
-        user = User.objects.get(email=request.POST['email'])
-        print ('*'*50)
-        print user['first_name']
-        print ('*'*50)
-        request.session['name'] = 'some name'
-        # request.session['user'] = response_from_models['user']
-        print ('*'*50)
-        # print current_user['first_name']
-        print ('*'*50)
+        request.session['user_id'] = response_from_models['user'].id
+        request.session['username'] = response_from_models['user'].first_name
         return redirect('logreg:success')
     else:
         for error in response_from_models['errors']:
