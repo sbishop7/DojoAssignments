@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login and Registration</title>
+    {% load staticfiles %}
+	<link rel="stylesheet" href="{% static 'logreg/css/index_style.css' %}">
+
+</head>
+<body>
+    <div class="main_content">
+      <fieldset>
+        <legend>Register</legend>
+        <form class="register" action="/register" method="post">
+            {% csrf_token %}
+          <label for="first_name">
+            First Name
+            <input type="text" name="first_name">
+          </label>
+          <label for="last_name">
+            Last Name
+            <input type="text" name="last_name">
+          </label>
+          <label for="email">
+            Email
+            <input type="email" name="email">
+          </label>
+          <label for="password">
+            Password
+            <input type="password" name="password">
+          </label>
+          <label for="password_confirmation">
+            Confirm Password
+            <input type="password" name="password_confirmation">
+          </label>
+          <button type="submit" name="button">Register</button>
+        </form>
+      </fieldset>
+      <fieldset>
+        <legend>Login</legend>
+        <form class="login" action="/login" method="POST">
+            {% csrf_token %}
+          <label for="email">
+            Email
+            <input type="email" name="email">
+          </label>
+          <label for="password">
+            Password
+            <input type="password" name="password">
+          </label>
+          <button type="submit" name="button">Login</button>
+        </form>
+      </fieldset>
+      {% if messages %}
+        {% for message in messages %}
+            <p>{{ message }}</p>
+        {% endfor %}
+    {% endif %}
+    </div>
+</body>
+</html>
