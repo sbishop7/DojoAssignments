@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, reverse
 from .models import Course
 
 def index(request):
@@ -23,4 +23,4 @@ def cancel(request):
 
 def delete(request):
     Course.objects.filter(id=request.session['id']).delete()
-    return redirect('/')
+    return redirect( reverse('secrets:index'))
