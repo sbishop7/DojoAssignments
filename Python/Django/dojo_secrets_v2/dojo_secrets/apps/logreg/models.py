@@ -54,11 +54,14 @@ class UserManager(models.Manager):
                 response_to_views['status'] = True
                 response_to_views['user'] = user
                 response_to_views['message'] = 'Successfully logged in!'
+            else:
+                errors.append('Email or Password does not match')
+                response_to_views['status'] = False
+                response_to_views['errors'] = errors
         except:
             errors.append('Email or Password does not match')
             response_to_views['status'] = False
             response_to_views['errors'] = errors
-            
 
         return response_to_views
 

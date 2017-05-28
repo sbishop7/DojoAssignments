@@ -11,7 +11,7 @@ def secrets(request):
     if 'user_id' in request.session:
         context={
             "user": User.objects.get(id=request.session['user_id']),
-            "secrets": Secret.objects.all().annotate(total_likes=Count('likes')).order_by('-created_at')[:10]
+            "secrets": Secret.objects.all().annotate(total_likes=Count('likes')).order_by('-created_at')[:5]
         }
             # .annotate(age=(datetime.datetime.now()-'created_at'))
 
@@ -23,36 +23,27 @@ def process(request):
     if request.method == 'POST':
         user = User.objects.get(id=request.session['user_id'])
         new_secret = Secret.objects.create(secret = request.POST['secret'], author=user)
-        
-
-        print ('*'*50)
-        # print new_secret
-        print new_secret
-        print ('*'*50)
-
     return redirect('secrets:secrets')
 
 def popular(request):
     if 'user_id' in request.session:
         context={
             "user": User.objects.get(id=request.session['user_id']),
-            "secrets": Secret.objects.all().annotate(total_likes=Count('likes')).order_by('created_at')
+            "secrets": Secret.objects.all().annotate(total_likes=Count('likes')).order_by('-total_likes', '-created_at')
         }
         return render(request, 'secrets/popular.html', context)
     else: 
         return redirect( reverse( "login:index" ) ) 
 
-def delete_secret(request, id):
+def delete_secret(request, id, return_to):
     Secret.objects.get(id=id).delete()
-    # print ('*'*50)
-    # # print new_secret
-    # print id
-    # print ('*'*50)
-    return redirect( reverse( "secrets:secrets" ) )
+    return_html = 'secrets:' + return_to
+    return redirect( reverse(return_html))
 
-def like(request, id):
-    Secret.objects.get(id=id).update(likes=request.session['user_id'])
-    return redirect( reverse('secrets:secrets'))
+def like(request, id, return_to):
+    return_html = 'secrets:' + return_to
+    Secret.objects.add_like(id, request.session['user_id'])
+    return redirect( reverse(return_html))
     
     
     

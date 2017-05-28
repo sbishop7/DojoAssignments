@@ -16,21 +16,21 @@ def register(request):
     if request.method == 'POST':
         response_from_models = User.objects.validate_registration(request.POST)
 
-    if response_from_models['status']:
-        request.session['user_id'] = response_from_models['user'].id
-        return redirect('secrets:secrets')
-    else:
-        for error in response_from_models['errors']:
-            messages.error(request, error)
-        return redirect('logreg:index')
+        if response_from_models['status']:
+            request.session['user_id'] = response_from_models['user'].id
+            return redirect('secrets:secrets')
+        else:
+            for error in response_from_models['errors']:
+                messages.error(request, error)
+            return redirect('logreg:index')
 
 def login(request):
     if request.method == 'POST':
         response_from_models = User.objects.validate_login(request.POST)
-    if response_from_models['status']:
-        request.session['user_id'] = response_from_models['user'].id
-        return redirect('secrets:secrets')
-    else:
-        for error in response_from_models['errors']:
-            messages.error(request, error)
+        if response_from_models['status']:
+            request.session['user_id'] = response_from_models['user'].id
+            return redirect('secrets:secrets')
+        else:
+            for error in response_from_models['errors']:
+                messages.error(request, error)
     return redirect('logreg:index')
