@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Add Book and Review</title>
+    {% load staticfiles %}
+	  <link rel="stylesheet" href="{% static 'books/css/books_style.css' %}">
+</head>
+<body>
+    <div id="header">
+        <div id="welcome">
+        </div>
+        <div id="navigation">
+            <a href="{% url 'books:index' %}">Home</a>
+            <a href="{% url 'books:logout' %}">Logout</a>
+        </div>
+    </div>
+    <strong>Add a New Book Title and a Review:</strong>
+    <form action="{% url 'books:create' %}" method='POST'>
+        {% csrf_token %}
+        <p>Book Title: <input type="text" name="title"/></p>
+        Author:</br>
+        <ul>
+            <li>Choose from the list: <select name="author">
+                <option></option>
+                
+                {% for author in authors %}
+                    <option>{{ author.name }}</option>
+                {% endfor %}
+                
+            </select>
+
+            </li>
+            <li>
+                Or add a new author: <input type="text" name="new_author"/>
+            </li>
+        </ul>
+        Review: <textarea rows='5' cols='60' name='comment'></textarea></br>
+        <p>
+            Rating: <select name="rating">
+                <option></option>
+                <option>5</option>
+                <option>4</option>
+                <option>3</option>
+                <option>2</option>
+                <option>1</option>
+            </select>
+        </p>
+        <input type="hidden" name='user_id' value={{ request.session.user_id }}>
+        <input type='submit' name='submit' value='Add Book and Review'>
+    </form>
+</body>
+</html>

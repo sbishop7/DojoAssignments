@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Add Book Review</title>
+    {% load staticfiles %}
+	  <link rel="stylesheet" href="{% static 'books/css/books_style.css' %}">
+</head>
+<body>
+    <div id="header">
+        <div id="welcome">
+        </div>
+        <div id="navigation">
+            <a href="{% url 'books:index' %}">Home</a>
+            <a href="{% url 'books:logout' %}">Logout</a>
+        </div>
+    </div>
+    <p><strong>{{ book.title }}</strong></br>
+    Author: {{ book.author.name }}</p>
+    <!--<img src="{% static 'books/images/rating2.png' %}">url('{% static "images/33.jpg"%}')-->
+    <fieldset>
+        <legend><strong>Reviews:</strong></legend>
+        {% for review in reviews %}
+            <hr>
+            Rating: <div class="rating-{{ review.rating }}" style="background-image: url('{% static "books/images/rating.png"%}')"></div>
+            <p><a href="{% url 'books:user' id=review.reviewer.id %}">{{ review.reviewer.first_name }}</a> says: {{ review.comment }}</p>
+            <p><span class='posted'>Posted on {{ review.created_at|date:"F j, Y" }}</span>      <a href="{% url 'books:delete_review' id=review.id %}">Delete this review</a></p>
+        {% endfor %}
+    </fieldset>
+    <fieldset>
+        <form action="{% url 'books:add_review' %}" method='POST'>
+        {% csrf_token %}
+        
+        Add a Review: </br>
+        <textarea rows='5' cols='60' name='comment'></textarea></br>
+        <p>
+            Rating: <select name="rating">
+                <option></option>
+                <option>5</option>
+                <option>4</option>
+                <option>3</option>
+                <option>2</option>
+                <option>1</option>
+            </select>
+        </p>
+        <input type="hidden" name='user_id' value={{ request.session.user_id }}>
+        <input type="hidden" name='book' value={{ book.id }}>
+        <input type='submit' name='submit' value='Submit Review'>
+    </fieldset>
+</body>
+</html>

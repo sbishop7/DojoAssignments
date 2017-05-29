@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Books Home</title>
+    {% load staticfiles %}
+	  <link rel="stylesheet" href="{% static 'books/css/books_style.css' %}">
+</head>
+<body>
+    <div id="header">
+        <div id="welcome">
+            <h2>Welcome, {{ user.first_name }}!</h2>
+        </div>
+        <div id="navigation">
+            <a href="{% url 'books:add' %}">Add Book and Review</a>
+            <a href="{% url 'books:logout' %}">Logout</a>
+        </div>
+    </div>
+    <fieldset>
+        <legend><strong>Recent Book Reviews:</strong></legend>
+        {% for review in recent_reviews %}
+            <hr>
+            <p><a href="books{{ review.book.id }}">{{review.book.title}}</a></p>
+            Rating: <div class="rating-{{ review.rating }}" style="background-image: url('{% static "books/images/rating.png"%}')"></div>
+            <p><a href="{% url 'books:user' id=review.reviewer.id %}">{{ review.reviewer.first_name }}</a> says: {{ review.comment }}</p>
+            <p><span class='posted'>Posted on {{ review.created_at|date:"F j, Y" }}</span></p>
+        {% endfor %}
+    </fieldset>
+    <fieldset>
+        <legend><strong>Other Books with Reviews:</strong></legend>
+        <div id="books">
+            {% for book in books %}
+                <a href="books{{ book.id }}">{{ book.title }}</a></br>
+            {% endfor %}
+        </div>
+    </fieldset>
+</body>
+</html>

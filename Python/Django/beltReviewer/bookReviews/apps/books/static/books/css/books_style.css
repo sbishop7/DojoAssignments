@@ -1,0 +1,105 @@
+*{
+    /*border: thin dotted red;*/
+}
+h2{
+    margin: 0px;
+}
+a{
+    margin-left: 10px;
+}
+#header{
+    width:100%;
+    margin-bottom: 20px;
+}
+#welcome{
+    width: 49%;
+    display: inline-block;
+    vertical-align: top;
+}
+#navigation{
+    width: 49%;
+    display: inline-block;
+    vertical-align: center;
+    text-align: right;
+}
+legend{
+  padding-left: -50px;
+}
+fieldset{
+  display: inline-block;
+  vertical-align: top;
+  width: 45%;
+  border: none;
+}
+ul{
+    list-style-type: none;
+}
+textarea{
+    vertical-align: top;
+}
+#books{
+    border: thin solid black;
+    margin-left: 10px;
+    width: 90%;
+    height: 150px;
+    overflow: scroll;
+}
+.posted{
+    font-style: italic;
+}
+.rating-4{
+    background: url('../images/rating.png');
+    background-position: center;
+	background-size: cover;
+}
+.rating-0{
+    background-position: 0px 0px;
+    height:20px;
+    width: 109px;
+    position:absolute;
+    display: inline-block;
+    vertical-align: top;
+}
+.rating-1{
+    background-position: 0px 100px;
+    height:20px;
+    width: 109px;
+    position:absolute;
+    display: inline-block;
+    vertical-align: top;
+}
+.rating-2{
+    background-position: 0px 80px;
+    height:20px;
+    width: 109px;
+    position:absolute;
+    display: inline-block;
+    vertical-align: top;
+}
+.rating-3{
+    background-position: 0px 60px;
+    height:20px;
+    width: 109px;
+    position:absolute;
+    display: inline-block;
+    vertical-align: top;
+}
+.rating-4{
+    background-position: 0px 40px;
+    height:20px;
+    width: 109px;
+    position:absolute;
+    display: inline-block;
+    vertical-align: top;
+}
+.rating-5{
+    background-position: 0px 20px;
+    height:20px;
+    width: 109px;
+    position:absolute;
+    display: inline-block;
+    vertical-align: top;
+}
+img{
+    height: 20px;
+}
