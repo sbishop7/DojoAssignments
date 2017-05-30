@@ -47,7 +47,7 @@ class UserManager(models.Manager):
     def validate_login(self, postData):
         errors = []
         response_to_views = {}
-        # hashed = bcrypt.hashpw(postData['password'].encode(), bcrypt.gensalt())
+        hashed = bcrypt.hashpw(postData['password'].encode(), bcrypt.gensalt())
         try:
             user = self.get(email = postData['email'])
             if bcrypt.hashpw(postData['password'].encode(), user.password.encode()) == user.password:

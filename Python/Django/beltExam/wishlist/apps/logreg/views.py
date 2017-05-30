@@ -18,7 +18,7 @@ def register(request):
 
         if response_from_models['status']:
             request.session['user_id'] = response_from_models['user'].id
-            return redirect('books:index')
+            return redirect('lists:index')
         else:
             for error in response_from_models['errors']:
                 messages.error(request, error)
@@ -29,7 +29,7 @@ def login(request):
         response_from_models = User.objects.validate_login(request.POST)
         if response_from_models['status']:
             request.session['user_id'] = response_from_models['user'].id
-            return redirect('books:index')
+            return redirect('lists:index')
         else:
             for error in response_from_models['errors']:
                 messages.error(request, error)

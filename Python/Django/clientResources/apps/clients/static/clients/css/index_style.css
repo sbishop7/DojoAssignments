@@ -1,0 +1,14 @@
+table{
+    border: thin solid black;
+    border-collapse: collapse;
+}
+th{
+    border-right: solid thin black;
+    border-left: solid thin black;
+    padding: 3px;
+}
+td{
+    border-right: solid thin black;
+    border-left: solid thin black;
+    padding: 3px;
+}
