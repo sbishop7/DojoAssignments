@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ajax Posts</title>
+    {% load staticfiles %}
+	<link rel="stylesheet" href="{% static 'posts/css/post_style.css' %}">
+
+</head>
+<body>
+    <h1>My Posts</h1>
+    {% for post in posts %}
+        <div class="post">{{ post.post }}</div>
+    {% endfor %}
+    
+    <form action="create" method='POST'>
+        {% csrf_token %}
+        <label for="post">Add a Note:</label>
+        <textarea rows='5' cols='30' name="post"></textarea></br>
+        <input type="submit" name="submit" value="Post It!"/>
+    </form>
+</body>
+</html>
