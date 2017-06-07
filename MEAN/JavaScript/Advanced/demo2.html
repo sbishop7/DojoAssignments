@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+
+    <body>
+        <button id="someButton">This is Some Button</button>
+        <script>
+            // Link our variable "button" to a DOM element
+            var button = document.getElementById("someButton")
+            // add a DOM eventListener to that variable.
+            button.addEventListener("click", whatToDoOnClick);
+            // here we define the whatToDoOnClick function
+            function whatToDoOnClick() {
+            alert("You Did it!")
+            }
+        </script>
+    </body>
+
+</html>
