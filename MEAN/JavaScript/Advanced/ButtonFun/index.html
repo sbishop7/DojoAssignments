@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Button Fun</title>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+</head>
+
+<body>
+    <style type="text/css">
+    button{
+        height: 100px;
+        width:100px;
+        background-color: blue;
+    }
+    </style>
+    <button color="blue"></button>
+    
+    <script>
+        function attach_handlers(){
+            $('button').click(function(){
+                // console.log($(this).css("background-color"));
+                if ($(this).attr("color") == "blue"){
+                    $(this).attr('color', "red");
+                    $(this).css("background-color", "red");
+                }
+                else{
+                    $(this).attr('color', "blue");
+                    $(this).css("background-color", "blue");
+                }
+            });
+            $('button').hover(function(){
+                // $(this).attr('color', $(this).css("background-color") );
+                $(this).css("background-color", "green");
+            }, function(){
+                $(this).css("background-color", $(this).attr('color'));
+            });
+        }
+
+        $(document).ready(function(){
+            
+            attach_handlers();
+
+            document.onkeydown = function(e){
+                console.log(e.keyCode);
+                if(e.keyCode == 13){
+                    console.log("hit return")
+                    // var btn = document.createElement("button");
+                    // document.body.appendChild(btn);
+                    $('body').append("<button color='blue'></button>");
+                    attach_handlers();
+                }
+            };
+        });
+    </script>
+</body>
+</html>
