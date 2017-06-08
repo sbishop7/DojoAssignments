@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Results</title>
+    <link rel="stylesheet" type="text/css" href="css/result_style.css">
+</head>
+<body>
+    <fieldset>
+        <legend>Results</legend>
+        <table>
+            <tr>
+                <td>Name:</td>
+                <td><%= name %></td>
+            </tr>
+            <tr>
+                <td>Dojo Location:</td>
+                <td><%= location %></td>
+            </tr>
+            <tr>
+                <td>Favorite Language:</td>
+                <td><%= language %></td>
+            </tr>
+            <tr>
+                <td>Comment:</td>
+                <td><%= comment %></td>
+            </tr>
+        </table>
+        <form action="/">
+            <p><input type='submit' id="submit" value='Go Back'></p>
+        </form>
+        
+    </fieldset>
+</body>
+</html>
