@@ -1,0 +1,13 @@
+*{
+    /*border: thin dotted red;*/
+}
+fieldset{
+    border: thin solid black;
+    width: 50%;
+    margin: auto;
+    padding: 10px;
+}
+h4{
+    text-decoration: underline;
+    margin-bottom: 2px;
+}

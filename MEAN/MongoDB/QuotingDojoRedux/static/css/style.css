@@ -1,0 +1,46 @@
+*{
+    /*border: thin dotted red;*/
+}
+/*form{
+    border: thin solid black;
+    width: 400px;
+    margin: auto;
+    padding: 10px;
+}*/
+h6{
+    text-decoration: underline;
+}
+#submit{
+    margin-left: 20px;
+}
+#skip{
+    margin-left: 20px;
+}
+input{
+    /*width: 150px;*/
+}
+select{
+    width: 123px;
+}
+label{
+    width: 90px;
+    display: inline-block;
+    /*border: thin solid black;*/
+}
+fieldset{
+  display: inline-block;
+  vertical-align: top;
+  width: 400px;
+  /*height: 150px;*/
+}
+textarea{
+    display: inline-block;
+    vertical-align: top;
+}
+.flash{
+    color: red;
+    font-style: italic;
+}
+.quoter{
+    margin-left: 40px;
+}
