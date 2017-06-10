@@ -1,0 +1,15 @@
+*{
+    /*border: thin dotted red;*/
+}
+label{
+    width: 90px;
+    display: inline-block;
+    /*border: thin solid black;*/
+}
+textarea{
+    display: inline-block;
+    vertical-align: top;
+}
+form{
+    display: inline-block;
+}
