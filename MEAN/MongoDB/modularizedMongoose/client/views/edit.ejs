@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Mongoose Dashboard</title>
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    </head>
+
+    <body>
+        <h1>Edit <%= animal.name %> the <%= animal.species %></h1>
+        <form action="/<%= animal.id %>" method="post">
+            <p><label for="name">Name: </label>
+            <input type="text" name="name" value=<%= animal.name %>></p>
+            <p><label for="species">Species: </label>
+            <input type="text" name="species"value=<%= animal.species %>></p>
+            <p><label for="description">Description: </label>
+            <textarea rows='5' cols='40' name='description'><%= animal.description %></textarea></p>
+            <input type="submit" name="submit" value="Submit">
+        </form>
+        <% if( typeof(errors) != "undefined" ) { %>
+            <% for( let error in errors ) { %>
+                <p class="flash"><%= errors[error].message %></p>
+            <% } %>
+        <% } %>
+        <p><a href="/"><button>Cancel</button></a></p>
+    </body>
+</html>
