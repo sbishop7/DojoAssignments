@@ -1,0 +1,27 @@
+#container{
+    margin: auto;
+}
+div{
+    width: 40px;
+    height: 40px;
+    border: thin solid black;
+    color: white;
+    display: inline-block;
+    vertical-align: top;
+    background-color: brown;
+    padding: 10px;
+}
+button{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 3px;
+    color: white;
+    /*border: thin solid black;*/
+    background-color: red;
+}
+.off{
+    background-color: red;
+}
+.on{
+    background-color: green;
+}

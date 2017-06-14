@@ -1,0 +1,1 @@
+<div *ngFor="let x of board, let idx = index" ><button (click)="switch(idx)" [ngClass]="{ 'on': x==='ON' }">{{ x }}</button></div>
