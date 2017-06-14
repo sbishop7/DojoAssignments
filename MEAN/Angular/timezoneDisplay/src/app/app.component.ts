@@ -7,5 +7,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'US Time Zone Display';
-  rightNow = new Date();
+  rightNow: Date = new Date();
+  tzButton: string = "CST";
+  switch: boolean = true;
+  updateTime(tz, tzString) {
+    console.log("Time to update")
+    this.rightNow = new Date();
+    this.rightNow = new Date(this.rightNow.getTime() + (tz * 60 * 60 * 1000));
+    this.tzButton = tzString;
+  }
 }
+

@@ -2,11 +2,11 @@
   <h1>
     {{title}}
   </h1>
-  <button>PST</button>
-  <button>MST</button>
-  <button>CST</button>
-  <button>EST</button>
-  <button>Clear</button>
+  <button (click)='updateTime(0, "PST")' [ngClass]="{ 'focus': tzButton==='PST' } ">PST</button>
+  <button (click)='updateTime(1, "MST")' [ngClass]="{ 'focus': tzButton==='MST' } ">MST</button>
+  <button (click)='updateTime(2, "CST")' [ngClass]="{ 'focus': tzButton==='CST' } ">CST</button>
+  <button (click)='updateTime(3, "EST")' [ngClass]="{ 'focus': tzButton==='EST' } ">EST</button>
+  <button (click)='updateTime(0)'>Clear</button>
 
-  <p>{{ rightNow | date: 'medium' : '-0500' }}</p>
+  <p>{{ rightNow | date: 'medium' }}</p>
 </div>

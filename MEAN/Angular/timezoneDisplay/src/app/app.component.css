@@ -2,5 +2,8 @@
     text-align: center;
 }
 button{
-    margin: auto;
+    margin: 15px;
+}
+.focus{
+    background-color: yellow;
 }
