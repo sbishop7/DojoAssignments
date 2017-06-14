@@ -1,0 +1,8 @@
+.box{
+    border: thin dotted gray;
+    height: 50px;
+    width: 50px;
+    display: inline-block;
+    vertical-align: top;
+    margin: 0px;
+}
