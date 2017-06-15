@@ -1,5 +1,8 @@
-
-<form (submit)="onSubmit()">
+<div id="success" *ngIf="accounts.length > 0">
+  <p>Thank you for registering with us {{ accounts[accounts.length-1].firstName }}.  We just send you a confirmation email at <a href="mailto:{{ accounts[accounts.length-1].email }}">{{ accounts[accounts.length-1].email }}</a>, and we will send all mail to {{ accounts[accounts.length-1].address }}, {{ accounts[accounts.length-1].city }} {{ accounts[accounts.length-1].state }}.</p>
+  <p>Have a wonderful day!</p>
+</div>
+<form #registrationForm="ngForm" (submit)="onSubmit()">
   <div id="wrapper">
     <h3>Account Information</h3>
     <p><label for="firstName">*First Name:</label>
@@ -7,22 +10,28 @@
     <p><label for="lastName">*Last Name:</label>
     <input type="text" name="lastName" required [(ngModel)]="user.lastName" #lastName="ngModel"><span *ngIf="lastName.errors" class="error"> Last name is required</span></p>
     <p><label for="email">*Email:</label>
-    <input type="email" name="email" required [(ngModel)]="user.email" #email="ngModel"><span *ngIf="email.errors" class="error"> Email is required</span></p>
+    <input type="email" name="email" required pattern="[\w\-\.\+]+\@[\w\-]+\.[a-zA-Z]+" [(ngModel)]="user.email" #email="ngModel"><span *ngIf="email.errors" class="error"> Email must be valid</span></p>
     <p><label for="password">*Password:</label>
-    <input type="password" name="password" required [(ngModel)]="user.password" #password="ngModel"><span *ngIf="password.errors" class="error"> Password is required</span></p>
-    <p><label for="confirmPW">*Password:</label>
-    <input type="password" name="confirmPW" required  #confirmPW="ngModel"><span *ngIf="password.errors" class="error"> Password is required</span></p>
+    <input type="password" name="password" required minlength="16" [(ngModel)]="user.password" #password="ngModel"><span *ngIf="password.errors" class="error"> Password must be at least 16 characters long.</span></p>
+
+    <p><label for="confirmPW">*Password Confirmation:</label>
+    <input type="password" name="confirmPW" required [(ngModel)]="user.confirmPW" #confirmPW="ngModel"><span *ngIf="(user.password !== user.confirmPW)" class="error"> Passwords Confirmation must match Password</span></p>
+    
+    <p><label for="address">*Street Address:</label>
+    <input type="text" name="address" required [(ngModel)]="user.address" #address="ngModel"><span *ngIf="address.errors" class="error"> Address is required</span></p>
+    <p><label for="unit">Unit/Apt #:</label>
+    <input type="text" name="unit" [(ngModel)]="user.unit" #unit="ngModel"><span *ngIf="unit.errors" class="error"> Password is required</span></p>
+    <p><label for="city">*City:</label>
+    <input type="text" name="city" required [(ngModel)]="user.city" #city="ngModel"><span *ngIf="city.errors" class="error"> City is required</span></p>
+    <p><label for="state">*State:</label>
+    <select name="state" required [(ngModel)]="user.state" #state="ngModel">
+      <option selected disabled value="">Select a state</option>
+      <option required *ngFor="let state of states" value="{{ state }}">{{ state }}</option>
+    </select><span *ngIf="state.errors" class="error"> State is required</span></p>
+    <p><label for="lucky">*I'm feeling lucky:</label>
+    <input type="radio" class="radio" name="lucky" required [(ngModel)]="user.lucky" #lucky="ngModel" value="Yes">Yes<input type="radio" name="lucky" required [(ngModel)]="user.lucky" #lucky="ngModel" value="No">No<span *ngIf="lucky.errors" class="error"> Choosing how you feel is required.</span></p>
 
 
   </div>
-  <input type="Submit" class="submit" value="Register">
+  <input type="Submit" class="submit" value="Register" [disabled]="!registrationForm.form.valid">
 </form>
-
-
-
-<p *ngIf="firstName.errors">{{ firstName.errors | json }}</p>
-<p>{{ firstName.valid | json }}</p>
-{{ user | json }}
-
-<p>All Accounts:</p>
-{{ accounts | json }}

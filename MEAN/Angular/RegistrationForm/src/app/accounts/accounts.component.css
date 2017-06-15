@@ -1,3 +1,6 @@
+*{
+    /*border: thin dotted red;*/
+}
 #wrapper{
     margin-bottom: 10px;
     padding: 10px;
@@ -8,7 +11,7 @@ form{
     padding: 10px;
 }
 label{
-    width: 150px;
+    width: 175px;
     text-align: right;
     /*border: thin dotted black;*/
     display: inline-block;
@@ -23,6 +26,12 @@ h3{
 .submit{
     width: 100%
 }
-input{
-    /*width: 500px;*/
+.inputBox{
+    width: 200px;
+}
+.radio {
+    width: 20px;
+}
+#success {
+    color: green;
 }
