@@ -1,0 +1,28 @@
+
+<form (submit)="onSubmit()">
+  <div id="wrapper">
+    <h3>Account Information</h3>
+    <p><label for="firstName">*First Name:</label>
+    <input type="text" name="firstName" required [(ngModel)]="user.firstName" #firstName="ngModel"><span *ngIf="firstName.errors" class="error"> First name is required</span></p>
+    <p><label for="lastName">*Last Name:</label>
+    <input type="text" name="lastName" required [(ngModel)]="user.lastName" #lastName="ngModel"><span *ngIf="lastName.errors" class="error"> Last name is required</span></p>
+    <p><label for="email">*Email:</label>
+    <input type="email" name="email" required [(ngModel)]="user.email" #email="ngModel"><span *ngIf="email.errors" class="error"> Email is required</span></p>
+    <p><label for="password">*Password:</label>
+    <input type="password" name="password" required [(ngModel)]="user.password" #password="ngModel"><span *ngIf="password.errors" class="error"> Password is required</span></p>
+    <p><label for="confirmPW">*Password:</label>
+    <input type="password" name="confirmPW" required  #confirmPW="ngModel"><span *ngIf="password.errors" class="error"> Password is required</span></p>
+
+
+  </div>
+  <input type="Submit" class="submit" value="Register">
+</form>
+
+
+
+<p *ngIf="firstName.errors">{{ firstName.errors | json }}</p>
+<p>{{ firstName.valid | json }}</p>
+{{ user | json }}
+
+<p>All Accounts:</p>
+{{ accounts | json }}
