@@ -19,8 +19,10 @@ export class AccountsComponent implements OnInit {
         state: "",
         lucky: ""
       }
-  message: string = ""
+  // message: string = ""
   
+  confirmPW: string = ""
+
   states: Array<string> = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware', 'District of Columbia', 'Florida', 'Georgia', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island', 'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming']
 
   // let myObj: { name: string} = { name: "Bill"};
@@ -29,6 +31,7 @@ export class AccountsComponent implements OnInit {
     console.log("Submitting");
     console.log(this.user);
     this.accounts.push(this.user);
+    this.confirmPW = ""
     this.user = {firstName: "",
         lastName: "",
         email: "",
