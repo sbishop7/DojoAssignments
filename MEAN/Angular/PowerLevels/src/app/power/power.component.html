@@ -1,0 +1,37 @@
+
+<fieldset>
+  <legend>PowerComponent</legend>
+    <div id="powerSet">
+      Inital Power Levels:
+
+      <select name="selectedLevel" [(ngModel)]="selectedLevel">
+        <option *ngFor="let power of powerLevels" value="{{ power }}">{{ power }}</option>
+      </select>
+
+      <button (click)='calculate()'>Calculate Powers</button>
+  
+    </div>
+    <div id="pic">
+      <img src="https://i.skyrock.net/9571/72349571/pics/2858018638_1.jpg" alt="Goku">
+    </div>
+
+    <div class="levelDisplay">
+      <app-human [powerLevel]="level"></app-human>
+    </div>
+    <div class="levelDisplay">
+      <app-saiyan [powerLevel]="level*10"></app-saiyan>
+    </div>
+    <div class="levelDisplay">
+      <app-supersaiyan [powerLevel]="level*90" [quotes]="levelQuotes"></app-supersaiyan>
+    </div>
+    <div class="levelDisplay">
+      <app-supersaiyan2 [powerLevel]="level*150" [quotes]="levelQuotes"></app-supersaiyan2>
+    </div>
+    <div class="levelDisplay">
+      <app-supersaiyan3 [powerLevel]="level*250" [quotes]="levelQuotes"></app-supersaiyan3>
+    </div>
+    <div class="levelDisplay">
+      <app-supersaiyan4 [powerLevel]="level*500" [quotes]="levelQuotes"></app-supersaiyan4>
+    </div>
+</fieldset>
+

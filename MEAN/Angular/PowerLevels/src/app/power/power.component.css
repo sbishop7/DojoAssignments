@@ -1,0 +1,22 @@
+*{
+    /*border: thin dotted red;*/
+}    
+img{
+    height: 150px;
+}
+#pic{
+    display: inline-block;
+    vertical-align: top;
+    text-align: right;
+    width: 45%
+}
+#powerSet{
+    display: inline-block;
+    width: 50%
+}
+.levelDisplay{
+    display: inline-block;
+    vertical-align: top;
+    width: 32.3%;
+    background-color: #FFF9E3;
+}
