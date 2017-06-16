@@ -1,0 +1,26 @@
+*{
+    /*border: thin dotted red;*/
+}
+div{
+    background-color: lightskyblue;
+    border: thin solid black;
+    /*margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;*/
+    margin: 10px
+}
+#header{
+    width: 740px;
+}
+#nav{
+    width: 200px;
+    display: inline-block;
+    height: 500px;
+}
+
+#main{
+    width: 515px;
+    display: inline-block;
+    vertical-align: top;
+    height: 500px;
+}
