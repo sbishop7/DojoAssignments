@@ -1,0 +1,6 @@
+<div id="wrapper">
+  <app-quote-create [quotes]="all_quotes" (createQuote)="createQuote($event)"></app-quote-create>
+
+  <app-quote-details [quotes]="all_quotes" (deleteQuote)="deleteQuote($event)"></app-quote-details>
+
+</div>

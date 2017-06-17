@@ -1,0 +1,15 @@
+* {
+    /*border: thin dotted red;*/
+}
+.form{
+    text-align: right;
+    width: 370px;
+    display: inline-block;
+}
+
+.errors {
+    color: red;
+    display: inline-block;
+    vertical-align: top;
+    width: 270px;
+}

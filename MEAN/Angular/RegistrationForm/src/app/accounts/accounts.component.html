@@ -24,10 +24,12 @@
     <p><label for="city">*City:</label>
     <input type="text" name="city" required [(ngModel)]="user.city" #city="ngModel"><span *ngIf="city.errors" class="error"> City is required</span></p>
     <p><label for="state">*State:</label>
+
     <select name="state" required [(ngModel)]="user.state" #state="ngModel">
       <option selected disabled value="">Select a state</option>
       <option required *ngFor="let state of states" value="{{ state }}">{{ state }}</option>
     </select><span *ngIf="state.errors" class="error"> State is required</span></p>
+    
     <p><label for="lucky">*I'm feeling lucky:</label>
     <input type="radio" class="radio" name="lucky" required [(ngModel)]="user.lucky" #lucky="ngModel" value="Yes">Yes<input type="radio" name="lucky" required [(ngModel)]="user.lucky" #lucky="ngModel" value="No">No<span *ngIf="lucky.errors" class="error"> Choosing how you feel is required.</span></p>
 
