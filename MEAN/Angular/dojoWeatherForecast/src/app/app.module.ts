@@ -1,3 +1,4 @@
+import { WeatherService } from './weather.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -28,7 +29,7 @@ import { ChicagoComponent } from './chicago/chicago.component';
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [WeatherService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

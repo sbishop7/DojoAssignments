@@ -9,3 +9,6 @@ ul li{
     list-style: none;
     display: inline-block;
 }
+fieldset{
+    text-align: left;
+}
