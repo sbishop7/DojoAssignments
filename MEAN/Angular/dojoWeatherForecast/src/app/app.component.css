@@ -1,0 +1,11 @@
+*{
+    /*border: thin dotted red;*/
+}
+#wrapper{
+    width: 970px;
+    text-align: center;
+}
+ul li{
+    list-style: none;
+    display: inline-block;
+}

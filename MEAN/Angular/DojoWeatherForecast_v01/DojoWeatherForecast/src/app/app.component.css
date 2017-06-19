@@ -1,0 +1,7 @@
+*{
+    border: thin dotted red;
+}
+#wrapper{
+    width: 970px;
+    text-align: center;
+}
