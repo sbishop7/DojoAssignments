@@ -1,0 +1,9 @@
+*{
+    /*border: thin dotted red;*/
+}
+#wrapper{
+    border: thin solid black;
+    width: 970px;
+    padding: 10px;
+    background-color: lightgray;
+}
