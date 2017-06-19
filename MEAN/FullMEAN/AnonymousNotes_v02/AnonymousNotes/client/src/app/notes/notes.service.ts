@@ -18,4 +18,10 @@ export class NotesService {
               .toPromise()
   }
 
+  create_note(newNote){
+    return this._http.post( '/notes/create', newNote )
+              .map( data => data.json() )
+              .toPromise()
+  }
+
 }

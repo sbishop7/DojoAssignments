@@ -9,7 +9,9 @@ let app = express();
 
 let PORT = 8000;
 
-app.use(bodyParser.urlencoded({extended: true}));
+// app.use(bodyParser.urlencoded({extended: true}));
+
+app.use(bodyParser.json())
 
 app.use(express.static(path.join(__dirname, "./client/dist")));
 // app.use(express.static(path.join(__dirname, "./node_modules")));
@@ -17,11 +19,11 @@ app.use(express.static(path.join(__dirname, "./client/dist")));
 
 require('./server/config/mongoose.js');
 
-require('./server/config/routes.js')(app)
+// require('./server/config/routes.js')(app)
 
-// let routes_setter = require('./server/config/routes.js');
+let routes_setter = require('./server/config/routes.js');
 
-// routes_setter(app);
+routes_setter(app);
 
 app.listen(PORT, () => {
     console.log(`Listening on port ${PORT}`)

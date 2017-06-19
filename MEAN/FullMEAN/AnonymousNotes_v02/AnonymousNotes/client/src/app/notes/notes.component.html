@@ -1,6 +1,6 @@
 <div>
-  <app-add-note></app-add-note>
+  <app-add-note (addNoteEvent)="addNote($event)"></app-add-note>
 </div>
 <div>
-  <app-list-notes></app-list-notes>
+  <app-list-notes [notes]="all_notes"></app-list-notes>
 </div>

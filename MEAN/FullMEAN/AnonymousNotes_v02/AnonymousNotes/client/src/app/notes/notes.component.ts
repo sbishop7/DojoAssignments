@@ -10,23 +10,22 @@ import {NotesService } from './notes.service';
   styleUrls: ['./notes.component.css']
 })
 export class NotesComponent implements OnInit {
-  all_notes: Array<Note> = []
+  all_notes: Array<Note> 
 
   constructor(private _notesService: NotesService) { }
 
   ngOnInit() {
+    this.get_all_notes();
+  }
+
+  get_all_notes(){
     this._notesService.get_notes()
-      .then((notes) => this.all_notes = notes)
+      .then((notes) => {this.all_notes = notes;} );
   }
 
   addNote(newNote: Note){
-    // this.rats_service.create_rat(new_rat)
-    //   .then(() => { this.get_all_rats() } )
-    //   .catch(err => console.log("There's an error?", err))
-    this._notesService.addNote(newNote)
-      .then(() => { this.get_notes() } )
-      .catch(err => console.log("There's an error...", err))
-
-
+    this._notesService.create_note(newNote)
+      .then(() => { this.get_all_notes() } )
+      .catch(err => console.log("Create Note Error...", err))
   }
 }

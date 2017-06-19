@@ -8,8 +8,9 @@ import { Note } from './../notes'
   styleUrls: ['./add-note.component.css']
 })
 export class AddNoteComponent implements OnInit {
-  newNote: Note = new Note
-  @Output() addNoteEvent = new EventEmitter()
+  @Output() addNoteEvent = new EventEmitter();
+  newNote: Note = new Note();
+  
 
   constructor() { }
 
@@ -17,7 +18,7 @@ export class AddNoteComponent implements OnInit {
   }
 
   addNote() {
-    this.addNoteEvent.emit(this.newNote)
-    this.newNote = new Note
+    this.addNoteEvent.emit(this.newNote);
+    this.newNote = new Note();
   }
 }
