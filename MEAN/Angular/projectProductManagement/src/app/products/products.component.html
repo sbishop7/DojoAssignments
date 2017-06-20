@@ -1,0 +1,14 @@
+<ul>
+  <li><a [routerLink]="['/']">Home</a></li>
+  <li> | </li>
+  <li><a [routerLink]="['/list']">Product List</a></li>
+  <li> | </li>
+  <li><a [routerLink]="['/create']">Product Creation</a></li>
+</ul>
+
+<fieldset>
+  <legend>router-outlet</legend>
+  <router-outlet></router-outlet>
+</fieldset>
+
+{{ products | json }}

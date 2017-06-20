@@ -1,0 +1,7 @@
+*{
+    /*border: thin dotted red;*/
+}
+label{
+    width: 100px;
+    display: inline-block;
+}
