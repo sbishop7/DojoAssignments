@@ -2,13 +2,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { CommunicateService } from './communicate.service';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './products/home/home.component';
 import { ListProductsComponent } from './products/list-products/list-products.component';
 import { ProductsComponent } from './products/products.component';
-import { DetailsComponent } from './products/list-products/details/details.component';
 import { NewProductComponent } from './products/new-product/new-product.component';
 import { EditProductComponent } from './products/edit-product/edit-product.component';
 
@@ -18,7 +18,6 @@ import { EditProductComponent } from './products/edit-product/edit-product.compo
     HomeComponent,
     ListProductsComponent,
     ProductsComponent,
-    DetailsComponent,
     NewProductComponent,
     EditProductComponent
   ],
@@ -28,7 +27,7 @@ import { EditProductComponent } from './products/edit-product/edit-product.compo
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [CommunicateService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

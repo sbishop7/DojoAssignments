@@ -5,3 +5,7 @@ label{
     width: 100px;
     display: inline-block;
 }
+.submit {
+    background-color: green;
+    color: white;
+}

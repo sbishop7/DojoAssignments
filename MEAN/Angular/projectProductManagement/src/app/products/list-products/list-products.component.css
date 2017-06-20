@@ -1,0 +1,28 @@
+.details{
+    border: thin solid black;
+    background-color: white;
+    width: 200px;
+    height: 300px;
+    display: inline-block;
+    vertical-align: top;
+    margin: 10px;
+    padding: 10px;
+}
+
+img{
+    width: 150px;
+    height: 110px;
+    margin-left: 20px;
+}
+
+.editBtn{
+    background-color: orange;
+}
+button{
+    width: 150px;
+    margin: 5px 20px;
+}
+.deleteBtn{
+    background-color: red;
+    color: white;
+}

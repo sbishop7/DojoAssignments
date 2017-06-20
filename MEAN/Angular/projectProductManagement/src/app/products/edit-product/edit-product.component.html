@@ -1,3 +1,15 @@
-<p>
-  edit-product works!
-</p>
+<h2>Edit Product</h2>
+
+<form #editProductForm="ngForm" (submit)="onSubmit()">
+  <p><label for="title" >Title</label>
+  <input type="text" name="title" [(ngModel)]="product.title" #title="ngModel"></p>
+
+  <p><label for="price" >Price</label>
+  <input type="text" name="price" [(ngModel)]="product.price" #price="ngModel"></p>
+
+  <p><label for="image" >Image URL</label>
+  <input type="text" name="image" [(ngModel)]="product.image" #image="ngModel"></p>
+
+  <button class="deleteBtn" (click)="onClickDelete()">DELETE</button>
+  <input type="submit" class="submit" name="submit" value="UPDATE">
+</form>

@@ -1,0 +1,19 @@
+*{
+    /*border: thin dotted red;*/
+}
+label{
+    width: 100px;
+    display: inline-block;
+}
+.submit {
+    background-color: blue;
+    color: white;
+    width: 75px;
+    margin: 5px 20px;
+}
+.deleteBtn{
+    background-color: red;
+    color: white;
+    width: 75px;
+    margin: 5px 20px;
+}
