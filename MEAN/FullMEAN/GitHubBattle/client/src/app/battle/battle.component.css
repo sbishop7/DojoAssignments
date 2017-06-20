@@ -1,0 +1,24 @@
+*{
+    /*border: thin dotted red;*/
+}
+#wrapper{
+    width: 970px;
+    border: thin solid black;
+}
+#title{
+    display: inline-block;
+    width: 48%;
+    padding: 10px;
+}
+#nav{
+    display: inline-block;
+    vertical-align: top;
+    text-align: right;
+    width: 48%;
+    font-size: 20px;
+    padding-top: 10px;
+}
+ul li{
+    list-style: none;
+    display: inline-block;
+}
