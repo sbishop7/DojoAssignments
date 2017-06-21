@@ -1,0 +1,15 @@
+*{
+    /*border: thin dotted red;*/
+}
+#wrapper{
+    margin: 20px;
+    padding: 10px;
+}
+.player{
+    width: 350px;
+    margin: 20px;
+    border: thin solid black;
+    display: inline-block;
+    vertical-align: top;
+    padding: 10px;
+}

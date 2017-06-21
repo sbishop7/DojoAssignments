@@ -1,0 +1,7 @@
+*{
+    border: thin dotted red;
+}
+#wrapper{
+    margin: 20px;
+    padding: 10px;
+}

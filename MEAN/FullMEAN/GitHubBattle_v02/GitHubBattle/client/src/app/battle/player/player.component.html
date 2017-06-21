@@ -1,0 +1,8 @@
+<h2>{{ player }}</h2>
+
+<form #formData="ngForm" (submit)="onSubmit()">
+  <label for="username">GitHub username:</label>
+  <input type="text" name="username" required [(ngModel)]="username">
+  <p *ngIf="userExists === false" class="error">GitHub username does not exist, try again.</p>
+  <p><input type="submit" name="submit" id="submit" value="Get User"  [disabled]="!formData.valid"></p>
+</form>

@@ -1,0 +1,14 @@
+*{
+    text-align: center;
+}
+h2{
+    margin: 2px;
+}
+#submit{
+    background-color: blue;
+    color: white;
+    width: 90%;
+}
+.error{
+    color: red;
+}

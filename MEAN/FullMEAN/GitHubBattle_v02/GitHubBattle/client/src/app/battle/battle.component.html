@@ -1,0 +1,12 @@
+
+<div id="wrapper">
+  
+  <div class="player">
+    <app-player [player]='p1' (playerStats)="player1Stats($event)"></app-player>
+    {{ player1 | json }}
+  </div>
+  <div class="player">
+    <app-player [player]='p2'></app-player>
+  </div>
+
+</div>
