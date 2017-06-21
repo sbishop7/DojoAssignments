@@ -4,12 +4,19 @@
 #wrapper{
     margin: 20px;
     padding: 10px;
+    width: 820;
 }
 .player{
     width: 350px;
+    height: 150px;
     margin: 20px;
     border: thin solid black;
     display: inline-block;
     vertical-align: top;
     padding: 10px;
+}
+button{
+    background-color: orange;
+    width: 790px;
+    margin-left: 20px;
 }

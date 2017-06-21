@@ -2,11 +2,12 @@
 <div id="wrapper">
   
   <div class="player">
-    <app-player [player]='p1' (playerStats)="player1Stats($event)"></app-player>
-    {{ player1 | json }}
+    <app-player *ngIf="!readyPlayer1" [player]='p1' (playerStats)="player1Stats($event)"></app-player>
+    <app-ready-player *ngIf="readyPlayer1" [player]='player1'></app-ready-player>
   </div>
   <div class="player">
-    <app-player [player]='p2'></app-player>
+    <app-player *ngIf="!readyPlayer2" [player]='p2' (playerStats)="player2Stats($event)"></app-player>
+    <app-ready-player *ngIf="readyPlayer2" [player]='player2'></app-ready-player>
   </div>
-
+  <button *ngIf="readyPlayer2 && readyPlayer1" >BATTLE!</button>
 </div>

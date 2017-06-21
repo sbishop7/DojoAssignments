@@ -9,7 +9,11 @@ import { RankingsComponent } from './rankings/rankings.component';
 import { BattleComponent } from './battle/battle.component';
 import { ResultsComponent } from './battle/results/results.component';
 import { GithubApiService } from './github-api.service';
-import { PlayerComponent } from './battle/player/player.component'
+import { PlayerComponent } from './battle/player/player.component';
+import { PlayerService } from './battle/player.service';
+import { ReadyPlayerComponent } from './battle/ready-player/ready-player.component';
+import { Player1Service } from './player1.service';
+import { Player2Service } from './player2.service';
 
 @NgModule({
   declarations: [
@@ -17,7 +21,8 @@ import { PlayerComponent } from './battle/player/player.component'
     RankingsComponent,
     BattleComponent,
     ResultsComponent,
-    PlayerComponent
+    PlayerComponent,
+    ReadyPlayerComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +30,12 @@ import { PlayerComponent } from './battle/player/player.component'
     FormsModule,
     HttpModule
   ],
-  providers: [GithubApiService],
+  providers: [
+    GithubApiService,
+    PlayerService,
+    Player1Service,
+    Player2Service
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
