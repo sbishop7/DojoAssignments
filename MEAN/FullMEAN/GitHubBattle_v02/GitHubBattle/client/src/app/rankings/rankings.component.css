@@ -1,7 +1,32 @@
 *{
-    border: thin dotted red;
+    /*border: thin dotted red;*/
 }
 #wrapper{
     margin: 20px;
     padding: 10px;
+    overflow: auto;
+    height: 600px;
+    border: thin solid black;
+}
+.avatar{
+    border: thin solid black;
+    text-align: center;
+    width: 350px;
+    height: 150px;
+    margin: 20px;
+    border: thin solid black;
+    display: inline-block;
+    vertical-align: top;
+    padding: 10px;
+}
+
+img{
+    width: 100px;
+    height: 100px;
+}
+.player{
+    border: thin solid black;
+}
+h2{
+    display: inline-block;
 }

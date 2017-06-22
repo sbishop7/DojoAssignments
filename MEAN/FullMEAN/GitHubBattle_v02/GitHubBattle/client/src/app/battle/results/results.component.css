@@ -1,0 +1,38 @@
+#winner{
+    border: thin solid black;
+    text-align: center;
+    width: 350px;
+    height: 150px;
+    margin: 20px;
+    border: thin solid black;
+    display: inline-block;
+    vertical-align: top;
+    padding: 10px;
+}
+img{
+    width: 100px;
+    height: 100px;
+    /*margin-left: 120px;*/
+}
+#details{
+    display: inline-block;
+    width: 350px;
+    margin: 20px;
+    padding: 10px;
+}
+.first{
+    color: green;
+}
+.second{
+    color: red;
+}
+button{
+    width: 75px;
+    background-color: black;
+    color: white;
+    margin-left: 400px;
+    margin-bottom: 20px;
+}
+#wrapper{
+    text-align: center;
+}

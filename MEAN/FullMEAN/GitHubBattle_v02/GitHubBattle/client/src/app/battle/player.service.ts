@@ -11,25 +11,13 @@ export class PlayerService {
   ) { }
 
   create(player){
-    return this._http.post( '/playsers', player)
+    return this._http.post('/add', player)
       .map( data => data.json() )
       .toPromise();
   }
 
   all_players() {
     return this._http.get( '/players' )
-      .map( data => data.json() )
-      .toPromise();
-  }
-
-  one_player(pk){
-    return this._http.get('/players/${pk}')
-      .map( data => data.json() )
-      .toPromise();
-  }
-
-  update(player, pk){
-    return this._http.put( '/players/${pk}', player)
       .map( data => data.json() )
       .toPromise();
   }

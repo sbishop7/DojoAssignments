@@ -1,4 +1,12 @@
 <div id="wrapper">
-  <h2>Rankings</h2>
+  <div *ngFor="let player of all_players, let idx = index" class="player">
+    <h2>{{ idx+1 }}</h2>
 
+    <div class="avatar">
+      <img src='{{ player.avatar_url }}' alt="player avatar">
+      <p>{{ player.username }}</p>
+    </div>
+    <h2> Score: {{ player.score }}</h2>
+  </div>
+  
 </div>

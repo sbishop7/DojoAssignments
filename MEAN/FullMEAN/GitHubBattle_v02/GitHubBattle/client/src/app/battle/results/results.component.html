@@ -1,3 +1,20 @@
-<p>
-  results works!
-</p>
+<div #wrapper>
+  <div id="details">
+    <h2 class="first">1st Place</h2>
+    <p class="first" *ngIf="player1.score >= player2.score">{{ player1.username }} (Score: {{ player1.score }})</p>
+    <p class="first" *ngIf="player2.score > player1.score">{{ player2.username }} (Score: {{ player2.score }})</p>
+
+    <h2 class="second">2st Place</h2>
+    <p class="second" *ngIf="player1.score >= player2.score">{{ player2.username }} (Score: {{ player2.score }})</p>
+    <p class="second" *ngIf="player2.score > player1.score">{{ player1.username }} (Score: {{ player1.score }})</p>
+
+  </div>
+  <div id="winner">
+    <img src='{{ player1.avatar_url }}' alt="player avatar" *ngIf="player1.score >= player2.score">
+    <img src='{{ player2.avatar_url }}' alt="player avatar" *ngIf="player2.score > player1.score">
+    <p *ngIf="player1.score >= player2.score"> {{ player1.username }}</p>
+    <p *ngIf="player2.score > player1.score"> {{ player2.username }}</p>
+  </div>
+  <button (click)="reset()">Reset</button>
+
+</div>

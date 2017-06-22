@@ -9,5 +9,6 @@
     <app-player *ngIf="!readyPlayer2" [player]='p2' (playerStats)="player2Stats($event)"></app-player>
     <app-ready-player *ngIf="readyPlayer2" [player]='player2'></app-ready-player>
   </div>
-  <button *ngIf="readyPlayer2 && readyPlayer1" >BATTLE!</button>
+  
+  <button *ngIf="readyPlayer2 && readyPlayer1" [routerLink]="['/results']">BATTLE!</button>
 </div>
