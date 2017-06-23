@@ -26,8 +26,13 @@ export class UsersComponent implements OnInit {
   }
 
   register(){
-    this._user_service.register(this.user)
+    if(this.user.password == this.confirmPW){
+      this._user_service.register(this.user)
         .catch((err) => console.log("Registration error... ", err))
         .then(() => {this._router.navigate(["/users"])})
+    }else{
+      console.log("password doesn't match")
+    }
+    
   }
 }
