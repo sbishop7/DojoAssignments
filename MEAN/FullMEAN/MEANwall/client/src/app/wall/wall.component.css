@@ -1,0 +1,20 @@
+*{
+
+}
+#title{
+    display: inline-block;
+    width: 400px;
+}
+#welcome{
+    display: inline-block;
+    vertical-align: top;
+    text-align: right;
+    margin-top: 10px;
+    width: 485px;
+}
+#wrapper{
+    width: 970px;
+}
+#logoutBtn{
+    margin-left: 10px;
+}

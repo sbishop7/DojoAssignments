@@ -4,16 +4,18 @@ import { Router } from "@angular/router"
 import { UserService } from "./../user/user.service"
 
 @Component({
-  selector: 'app-wall',
-  templateUrl: './wall.component.html',
-  styleUrls: ['./wall.component.css']
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css']
 })
-export class WallComponent implements OnInit {
+export class HomeComponent implements OnInit {
   user_id: string
   username: string
   user = {username: "", user_id: ""}
 
-  constructor( private _userService: UserService, private _router: Router ) {
+  constructor( private _userService: UserService, private _router: Router ) { }
+
+  ngOnInit() {
     this._userService.check_status()
       .then((data) => {
         if(data){
@@ -22,9 +24,6 @@ export class WallComponent implements OnInit {
         }
       })
       .catch(() => this._router.navigate(["/login"]) )
-   }
-
-  ngOnInit() {
   }
 
   logout(){

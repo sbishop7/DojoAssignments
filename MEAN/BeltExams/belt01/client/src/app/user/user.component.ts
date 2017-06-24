@@ -20,7 +20,7 @@ export class UserComponent implements OnInit {
   login(){
     console.log("Username is... " + this.username)
     this._user_service.login(this.username)
-      .then(() => { this._router.navigate(["/messages"]) })
+      .then(() => { this._router.navigate(["/home"]) })
       .catch(() => console.log("Couldn't log in"))
   }
 }
