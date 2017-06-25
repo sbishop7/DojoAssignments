@@ -18,12 +18,12 @@ export class DashboardComponent implements OnInit {
   
   ngOnInit() {
     this.get_all_scores();
-    console.log(this.scores)
+    // console.log(this.scores)
     this.message += this._scoreService.message;
     this.message += this._questionService.message;
     this._scoreService.message = ""
     this._questionService.message = ""
-    console.log(this.message)
+    // console.log(this.message)
   }
 
   lets_play(){
@@ -31,17 +31,17 @@ export class DashboardComponent implements OnInit {
   }
 
   get_all_scores(){
-    console.log("retrieving Scores")
+    // console.log("retrieving Scores")
     this._scoreService.all_scores()
         .then( data => { 
-          console.log(data),
+          // console.log(data),
           this.scores = data })
         .catch( err => { console.log("Error retrieving all scores... ", err);})
-    console.log(this.scores)
+    // console.log(this.scores)
   }
-  searchScores(){
-    console.log("searching")
-  }
+  // searchScores(){
+  //   console.log("searching")
+  // }
 
   ngOnDestroy(){
     // this.message = ""

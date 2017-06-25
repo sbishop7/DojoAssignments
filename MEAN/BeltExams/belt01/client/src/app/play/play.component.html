@@ -3,25 +3,16 @@
   <p>Choose an answer for each of the questions and submit the test once done.</p>
   <p>Good luck!</p>
 
-  <form #formData="ngForm" (submit)="submit()">
-    <div class="question"><label>1. {{ trivia_questions[0].question }} </label>
-      <p><input type="radio" name="guess1" [(ngModel)]="guess1" value="{{ trivia_questions[0].answers[0] }}">{{ trivia_questions[0].answers[0] }}</p>
-      <p><input type="radio" name="guess1" [(ngModel)]="guess1" value="{{ trivia_questions[0].answers[1] }}">{{ trivia_questions[0].answers[1] }}</p>
-      <p><input type="radio" name="guess1" [(ngModel)]="guess1" value="{{ trivia_questions[0].answers[2] }}">{{ trivia_questions[0].answers[2] }}</p>
-    </div>
-    <div class="question"><label>2. {{ trivia_questions[1].question }} </label>
-      <p><input type="radio" name="guess1" [(ngModel)]="guess2" value="{{ trivia_questions[1].answers[0] }}">{{ trivia_questions[1].answers[0] }}</p>
-      <p><input type="radio" name="guess1" [(ngModel)]="guess2" value="{{ trivia_questions[1].answers[1] }}">{{ trivia_questions[1].answers[1] }}</p>
-      <p><input type="radio" name="guess1" [(ngModel)]="guess2" value="{{ trivia_questions[1].answers[2] }}">{{ trivia_questions[1].answers[2] }}</p>
-    </div>
-    <div class="question"><label>3. {{ trivia_questions[2].question }} </label>
-      <p><input type="radio" name="guess1" [(ngModel)]="guess3" value="{{ trivia_questions[2].answers[0] }}">{{ trivia_questions[2].answers[0] }}</p>
-      <p><input type="radio" name="guess1" [(ngModel)]="guess3" value="{{ trivia_questions[2].answers[1] }}">{{ trivia_questions[2].answers[1] }}</p>
-      <p><input type="radio" name="guess1" [(ngModel)]="guess3" value="{{ trivia_questions[2].answers[2] }}">{{ trivia_questions[2].answers[2] }}</p>
-    </div>
+  <form *ngIf="all_questions.length>0" #formData="ngForm" (submit)="submit()">
+    <div class="question" *ngFor="let trivia of trivia_questions, let idx = index">
+      <label>{{idx+1}}. {{ trivia.question }} </label>
+      <p *ngFor="let answer of trivia.answers">
+        <input type="radio" name="guess{{idx}}" required [(ngModel)]="guesses[idx]" value="{{answer}}">{{ answer }}
+        </p>
       
+    </div>
     <button (click)="cancel()" class="cancel">Cancel</button>
-    <input type="submit" name="submit" value="Submit">
+    <input type="submit" name="submit" value="Submit" [disabled]="!formData.form.valid">
   </form>
 
 </div>

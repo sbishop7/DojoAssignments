@@ -14,15 +14,15 @@ module.exports ={
 					} else {
 						let new_user = new User(req.body)
 						new_user.save()
-							.then(() => {
-								req.session.user_id = new_user._id
-                                req.session.username = user.username
-								res.json(true)
-							})
-							.catch((err) => {
-								console.log("User create error", err)
-								res.status(500).json(err)
-							})
+								.then(() => {
+									req.session.user_id = new_user._id
+									req.session.username = new_user.username
+									res.json(true)
+								})
+								.catch((err) => {
+									console.log("User create error", err)
+									res.status(500).json(err)
+								})
 					}
 				})
 		} else {

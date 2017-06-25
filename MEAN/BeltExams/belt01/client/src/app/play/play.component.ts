@@ -13,59 +13,17 @@ import { ScoreService } from "./score.service";
 })
 export class PlayComponent implements OnInit {
   user = {username: "", user_id: ""}
-  // all_questions: Array<any> = [
-  //   {question: "What is the world's biggest island?",
-  //   answer: "Greenland",
-  //   fakeAnswer1: "Iceland",
-  //   fakeAnswer2: "Antartica"},
-  //   {question: "Who was the first president of the United States of America?",
-  //   answer: "George Washington",
-  //   fakeAnswer1: "Ab Lincoln",
-  //   fakeAnswer2: "Donald Trump"},
-  //   {question: "What is Darth Sidious' public name?",
-  //   answer: "Sheev Palpatine",
-  //   fakeAnswer1: "Anakin Skywalker",
-  //   fakeAnswer2: "Count Dooku"},
-  // ]
+  all_questions = []
 
-  // {question: "What is the largest planet in the solar system?",
-  //   answer: "Jupiter",
-  //   fakeAnswer1: "Earth",
-  //   fakeAnswer2: "Pluto"},
-  //   {question: 'What did Einstein call the "most difficult thing to understand"?',
-  //   answer: "Income Taxes",
-  //   fakeAnswer1: "Human brain",
-  //   fakeAnswer2: "E = mc2"},
-    
-  all_questions: Array<any>
+
   trivia_questions: Array<any> =[]
-  guess1 = ""
-  guess2 = ""
-  guess3 = ""
   score = 0
   results: any
+  guesses: Array<string> = []
+  questionsToAsk = 3
 
   constructor(private _router: Router, private _userService: UserService, private _questionService: QuestionService, private _scoreService: ScoreService) {
-    this._questionService.all_questions()
-        .then((data) => {
-          if(data){
-            this.all_questions = data
-          }
-        })
-        .catch(() => console.log("Couldn't retrieve questions") )
 
-        // for(var i = 0; i < 3; i++){
-        // let idx = Math.floor( Math.random() * this.all_questions.length);
-        // let newQuestion = {question: this.all_questions[idx].question, answers: [], answer: this.all_questions[idx].answer}
-        // let answers = [this.all_questions[idx].answer, this.all_questions[idx].fakeAnswer1, this.all_questions[idx].fakeAnswer2]
-        // for (var j = 0; j<3; j++){
-        //   let n = Math.floor( Math.random() * answers.length);
-        //   newQuestion.answers.push(answers[n]);
-        //   answers.splice(n, 1);
-        // }
-        // this.trivia_questions.push(newQuestion);
-        // this.all_questions.splice(idx, 1);
-      
    }
 
   ngOnInit() {
@@ -78,58 +36,83 @@ export class PlayComponent implements OnInit {
       })
       .catch(() => this._router.navigate(["/login"]) )
 
-    // this._questionService.all_questions()
-    //     .then((data) => {
-    //       if(data){
-    //         console.log(data)
-    //         for(var i = 0; i<data.length; i++){
-    //           console.log(i)
-    //           let newQuestion = {question: data[i].question, answer: data[i].answer, fakeAnswer1: data[i].fakeAnswer1, fakeAnswer2: data[i].fakeAnswer2}
-    //           this.all_questions.push(newQuestion)
-    //           console.log(newQuestion)
-    //         }
-    //         // this.all_questions = data
-    //         console.log(this.all_questions)
-    //       }
-    //     })
-    //     .catch(() => console.log("Couldn't retrieve questions") )
-
-    //   for(var i = 0; i < 3; i++){
-    //     let idx = Math.floor( Math.random() * this.all_questions.length);
-    //     let newQuestion = {question: this.all_questions[idx].question, answers: [], answer: this.all_questions[idx].answer}
-    //     let answers = [this.all_questions[idx].answer, this.all_questions[idx].fakeAnswer1, this.all_questions[idx].fakeAnswer2]
-    //     for (var j = 0; j<3; j++){
-    //       let n = Math.floor( Math.random() * answers.length);
-    //       newQuestion.answers.push(answers[n]);
-    //       answers.splice(n, 1);
-    //     }
-    //     this.trivia_questions.push(newQuestion);
-    //     this.all_questions.splice(idx, 1);
-    //   }
+    this.get_questions()
+    this.get_answers()
+    this.shuffle_questions()
   }
 
   cancel(){
     this._router.navigate(['/home'])
   }
 
+  get_questions(){
+    this._questionService.all_questions()
+        .then( data => {
+          this.all_questions = data
+          this.shuffle_questions()
+          for(var i = 0; i < this.questionsToAsk; i++){
+            let newQuestion = {question: this.all_questions[i].question, answers: [], answer: this.all_questions[i].answer}
+            newQuestion.answers = [this.all_questions[i].answer, this.all_questions[i].fakeAnswer1, this.all_questions[i].fakeAnswer2]
+            for (var j = 0; j<newQuestion.answers.length; j++){
+              let temp = newQuestion.answers[j];
+              let randomSpot = Math.floor(Math.random()*newQuestion.answers.length);
+              newQuestion.answers[j] = newQuestion.answers[randomSpot];
+              newQuestion.answers[randomSpot] = temp;
+            }
+            this.trivia_questions.push(newQuestion);
+          }
+        })
+        .catch (err => { console.log("error retrieving questions... ", err);})
+  }
+
+  get_answers(){
+    if(this.all_questions.length>0){
+      for(var i = 0; i < 3; i++){
+          console.log("all questions count is " + this.all_questions.length)
+          let idx = Math.floor( Math.random() * this.all_questions.length);
+          let newQuestion = {question: this.all_questions[idx].question, answers: [], answer: this.all_questions[idx].answer}
+          let answers = [this.all_questions[idx].answer, this.all_questions[idx].fakeAnswer1, this.all_questions[idx].fakeAnswer2]
+          for (var j = 0; j<3; j++){
+            let n = Math.floor( Math.random() * answers.length);
+            newQuestion.answers.push(answers[n]);
+            answers.splice(n, 1);
+          }
+          this.trivia_questions.push(newQuestion);
+          this.all_questions.splice(idx, 1);
+        }
+    }
+
+  
+      
+  }
+
+  shuffle_questions(){
+    for(var i = 0; i < this.all_questions.length; i++){
+      let temp = this.all_questions[i];
+      let randomSpot = Math.floor(Math.random()*this.all_questions.length);
+      this.all_questions[i] = this.all_questions[randomSpot];
+      this.all_questions[randomSpot] = temp;
+    }
+  }
+
   submit(){
-    console.log("add submitting code")
-    if(this.guess1 === this.trivia_questions[0].answer){
-      this.score += 1;
+    for(let i = 0; i<this.trivia_questions.length; i++){
+      if(this.guesses[i] === this.trivia_questions[i].answer){
+        this.score += 1;
+      }
     }
-    if(this.guess2 === this.trivia_questions[1].answer){
-      this.score += 1;
-    }
-    if(this.guess3 === this.trivia_questions[2].answer){
-      this.score += 1;
-    }
-    this.results = {username: this.user.username, score: this.score, percentage: Math.floor((this.score/3)*100)}
+    this.results = {username: this.user.username, score: this.score, outOf: this.questionsToAsk, percentage: Math.floor((this.score/this.questionsToAsk)*100)}
     console.log(this.results)
     this._scoreService.add(this.results)
       .then(() => { this._router.navigate(["/home"]) })
       .catch(() => console.log("Couldn't save score"))
-
-    this._scoreService.message = "That was great, " + this.user.username + "!  Your score is " + this.score + "/3 (" + Math.floor((this.score/3)*100) + "%."
+    if(this.score === 3){
+      this._scoreService.message = "That was great, " + this.user.username + "!  Your score is " + this.score + "/" + this.questionsToAsk + " (" + Math.floor((this.score/this.questionsToAsk)*100) + "%)."
+    }else if(this.score === 0 ){
+      this._scoreService.message = "Oh, " + this.user.username + "!  Your score is " + this.score + "/" + this.questionsToAsk + " (" + Math.floor((this.score/this.questionsToAsk)*100) + "%)."
+    }else{
+      this._scoreService.message = "That was ok, " + this.user.username + "!  Your score is " + this.score + "/" + this.questionsToAsk + " (" + Math.floor((this.score/this.questionsToAsk)*100) + "%)."
+    }
   }
 
 

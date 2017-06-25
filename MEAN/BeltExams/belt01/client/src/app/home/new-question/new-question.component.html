@@ -22,7 +22,7 @@
 
 
   <button (click)="cancel()" class="cancel">Cancel</button>
-  <input type="submit" name="submit" value="Add a Question">
+  <input type="submit" name="submit" value="Add a Question" [disabled]="!formData.form.valid">
 </form>
 
 </div>
